@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>La Columna Semanal de Pirelowski · Semana 11</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0A0A0A;
+    --green: #1DB954;
+    --cream: #F0EDE6;
+    --red: #C8102E;
+    --leather: #8B7355;
+    --dark2: #141414;
+    --dark3: #1C1C1C;
+    --dark4: #242424;
+    color-scheme: dark;
+  }
+
+  html, body {
+    background-color: #0A0A0A !important;
+    background: #0A0A0A !important;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    border-bottom: 1px solid #222;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .logo-shihai {
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: var(--green);
+  }
+
+  .logo-doobar {
+    font-family: 'Anton', sans-serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--leather);
+  }
+
+  nav {
+    display: flex;
+    gap: 28px;
+  }
+
+  nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  nav a:hover, nav a.active { color: var(--cream); }
+
+  .week-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--green);
+    background: rgba(29,185,84,0.1);
+    border: 1px solid rgba(29,185,84,0.3);
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 20px 24px 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--leather);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 0.9;
+    letter-spacing: -1px;
+    color: var(--cream);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .hero-title span { color: var(--green); }
+
+  .hero-sub {
+    font-size: 14px;
+    color: #555;
+    margin-top: 16px;
+    font-weight: 500;
+  }
+
+  /* ── SCOREBOARD ── */
+  .scoreboard-section {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    padding: 0 24px;
+  }
+
+  .section-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--leather);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #222;
+  }
+
+  .scoreboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2px;
+  }
+
+  .matchup-card {
+    background: var(--dark2);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .matchup-card:hover { background: var(--dark3); }
+
+  .matchup-card.winner-left::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--green);
+  }
+
+  .matchup-teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .team-side {
+    flex: 1;
+  }
+
+  .team-side.right { text-align: right; }
+
+  .team-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--cream);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .team-name.loser { color: #444; }
+
+  .team-record {
+    font-size: 11px;
+    color: #555;
+    margin-top: 2px;
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .score-display {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .score {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 26px;
+    color: var(--cream);
+    min-width: 52px;
+    text-align: center;
+    animation: ledBlink 0.05s ease-out;
+  }
+
+  .score.loser-score { color: #383838; }
+
+  .score-sep {
+    color: #333;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+  }
+
+  @keyframes ledBlink {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes scrollText {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .matchup-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  .winner-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--green);
+    text-transform: uppercase;
+  }
+
+  .diff-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: #444;
+  }
+
+  /* ── POWER RANKINGS ── */
+  .rankings-section {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    padding: 0 24px;
+  }
+
+  .rankings-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .rankings-table tr {
+    border-bottom: 1px solid #141414;
+    transition: background 0.15s;
+  }
+
+  .rankings-table tr:hover { background: var(--dark2); }
+
+  .rankings-table td {
+    padding: 14px 12px;
+    font-size: 13px;
+  }
+
+  .rank-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 18px;
+    color: #333;
+    width: 40px;
+    font-weight: 700;
+  }
+
+  .rank-num.top3 { color: var(--green); }
+  .rank-num.bottom { color: var(--red); }
+
+  .rank-move {
+    width: 28px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .move-up { color: var(--green); }
+  .move-down { color: var(--red); }
+  .move-same { color: #333; }
+
+  .rank-manager {
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .rank-comment {
+    font-size: 12px;
+    color: #555;
+    font-style: italic;
+    padding-left: 8px;
+  }
+
+  .rank-record {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: #444;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .rank-pts {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    color: var(--leather);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* ── NEWS TICKER ── */
+  .ticker-bar {
+    background: var(--green);
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ticker-inner {
+    display: flex;
+    gap: 60px;
+    animation: ticker 30s linear infinite;
+    white-space: nowrap;
+  }
+
+  .ticker-item {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--black);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .ticker-dot {
+    color: rgba(0,0,0,0.4);
+    margin-right: 60px;
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ── NOTICIAS ── */
+  .news-section {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    padding: 0 24px;
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2px;
+  }
+
+  .news-main {
+    background: var(--dark2);
+    padding: 28px;
+  }
+
+  .news-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+    display: inline-block;
+  }
+
+  .tag-lesion { background: rgba(200,16,46,0.15); color: var(--red); }
+  .tag-waiver { background: rgba(29,185,84,0.15); color: var(--green); }
+  .tag-general { background: rgba(139,115,85,0.15); color: var(--leather); }
+
+  .news-headline {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .news-body {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.7;
+  }
+
+  .news-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .news-small {
+    background: var(--dark2);
+    padding: 18px;
+    flex: 1;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+
+  .news-small:hover { background: var(--dark3); }
+
+  .news-small-headline {
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+    line-height: 1.2;
+  }
+
+  .news-small-body {
+    font-size: 12px;
+    color: #555;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* ── TRASH TALK ── */
+  .trash-section {
+    max-width: 1100px;
+    margin: 24px auto 24px;
+    padding: 0 24px;
+  }
+
+  .trash-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2px;
+  }
+
+  .trash-card {
+    background: var(--dark2);
+    padding: 24px;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .trash-card:nth-child(1) { border-color: var(--red); }
+  .trash-card:nth-child(2) { border-color: var(--green); }
+  .trash-card:nth-child(3) { border-color: var(--leather); }
+
+  .trash-card:hover { background: var(--dark3); }
+
+  .trash-quote {
+    font-size: 17px;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .trash-author {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--green);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+    border-top: 1px solid #222;
+    padding-top: 8px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid #181818;
+    padding: 32px 24px;
+    text-align: center;
+    color: #333;
+    font-size: 11px;
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  footer span { color: var(--green); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    nav { display: none; }
+    .news-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 52px; }
+    .scoreboard-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <span class="logo-shihai">SHIHAI · DOOBAR</span>
+    <span class="logo-doobar">MLB</span>
+  </div>
+  <nav>
+    <a href="#resultados" class="active">Resultados</a>
+    <a href="#rankings">Rankings</a>
+    <a href="#noticias">Noticias</a>
+    <a href="#novatos">Novatos</a>
+    <a href="#wtf">WTF 🤯</a>
+    <a href="#mvp">MVP ⭐</a>
+    <a href="#trashtalk">Trash Talk</a>
+  </nav>
+  <div class="week-badge">SEMANA 11</div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    <span class="ticker-item">🏆 Liga Nacional lidera Road to the Tit... — Elking Mo 8-2</span>
+    <span class="ticker-item">⚡ Liga Americana: Baby Lions en la cima — Jesus Pozo 7-3</span>
+    <span class="ticker-item">🔥 Hermagoras en racha W4 — H. Homez imparable</span>
+    <span class="ticker-item">😬 Call of Mafia 2-8 — Diego Perdomo en modo supervivencia</span>
+    <span class="ticker-item">📊 Power Rankings Semana 11 actualizados</span>
+    <span class="ticker-item">⚠️ Matchup 11: Jun 8 – Jun 14 en curso</span>
+    <span class="ticker-item">🏆 Liga Nacional lidera Road to the Tit... — Elking Mo 8-2</span>
+    <span class="ticker-item">⚡ Liga Americana: Baby Lions en la cima — Jesus Pozo 7-3</span>
+    <span class="ticker-item">🔥 Hermagoras en racha W4 — H. Homez imparable</span>
+    <span class="ticker-item">😬 Call of Mafia 2-8 — Diego Perdomo en modo supervivencia</span>
+    <span class="ticker-item">📊 Power Rankings Semana 11 actualizados</span>
+    <span class="ticker-item">⚠️ Matchup 11: Jun 8 – Jun 14 en curso</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">La Columna Semanal de <span style="text-decoration:underline;color:var(--green)">PIRELOWSKI</span> · Edición Semana 11 · Miércoles 10 de junio, 2026</p>
+  <h1 class="hero-title">FANTASY<br><span>2026</span></h1>
+  <p class="hero-sub">La liga de los que saben. Y de los que creen que saben.</p>
+</div>
+
+<!-- RESULTADOS SEMANA -->
+<div class="scoreboard-section" id="resultados">
+  <p class="section-label">Standings — Liga Nacional</p>
+  <div class="scoreboard-grid">
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Road to the Tit...</div>
+          <div class="team-record">Elking Mo · 8-2-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">19,283</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 88%</div>
+          <div class="team-record">W% .800</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">🏆 Líder Liga Nacional</span>
+        <span class="diff-tag">STRK: L1</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Hermagoras</div>
+          <div class="team-record">H. Homez · 7-3-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">19,077</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 83%</div>
+          <div class="team-record">W% .700</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">🔥 En racha W4</span>
+        <span class="diff-tag">STRK: W4</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Chandu</div>
+          <div class="team-record">M. Gutiérrez · 7-3-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">18,442</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 83%</div>
+          <div class="team-record">W% .700</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">W3 consecutivas</span>
+        <span class="diff-tag">STRK: W3</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Inashiro Gakko</div>
+          <div class="team-record">Emir Sayago · 6-4-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">19,772</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 75%</div>
+          <div class="team-record">W% .600</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">6-4 bien posicionado</span>
+        <span class="diff-tag">STRK: L1</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Hasbulla Magomedov</div>
+          <div class="team-record">Luis Pirela · 5-5-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">19,834</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 58%</div>
+          <div class="team-record">W% .500</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">⚡ Más PF de su división</span>
+        <span class="diff-tag">STRK: L1</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Team Boli</div>
+          <div class="team-record">Nelson Lozano · 5-5-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">19,373</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 57%</div>
+          <div class="team-record">W% .500</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">Puede ir pa' arriba</span>
+        <span class="diff-tag">STRK: W1</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Locos y Hambre...</div>
+          <div class="team-record">nestor chavez · 5-5-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">18,312</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 33%</div>
+          <div class="team-record">W% .500</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">500 pero con poco margen</span>
+        <span class="diff-tag">STRK: L2</span>
+      </div>
+    </div>
+
+    <div class="matchup-card">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name loser">Team n*gg@</div>
+          <div class="team-record">A. Montero · 3-7-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score loser-score" style="font-size:16px;min-width:64px">17,783</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 4%</div>
+          <div class="team-record">W% .300</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">Modo milagro activado</span>
+        <span class="diff-tag">STRK: W1</span>
+      </div>
+    </div>
+
+    <div class="matchup-card">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name loser">South Park LLB</div>
+          <div class="team-record">Pedro García · 3-7-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score loser-score" style="font-size:16px;min-width:64px">17,477</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 6%</div>
+          <div class="team-record">W% .300</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">L4 seguidas. Tranquilo.</span>
+        <span class="diff-tag">STRK: L4</span>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+  <p class="section-label">Standings — Liga Americana</p>
+  <div class="scoreboard-grid">
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Baby Lions</div>
+          <div class="team-record">Jesus Pozo · 7-3-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">20,094</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 70%</div>
+          <div class="team-record">W% .700</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">🏆 Líder Liga Americana</span>
+        <span class="diff-tag">STRK: W2</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Mambas Leon Out</div>
+          <div class="team-record">S. Casilla · 6-4-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">18,719</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 58%</div>
+          <div class="team-record">W% .600</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">Peleando el 2do puesto</span>
+        <span class="diff-tag">STRK: L1</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Team Otaku's</div>
+          <div class="team-record">A. Quintero · 6-4-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">18,229</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 41%</div>
+          <div class="team-record">W% .600</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">Empate en record con Mambas</span>
+        <span class="diff-tag">STRK: W1</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Los pichones</div>
+          <div class="team-record">M. Ramirez · 5-5-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">19,548</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 63%</div>
+          <div class="team-record">W% .500</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">PF alto, récord mediocre</span>
+        <span class="diff-tag">STRK: W1</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Los Peloteros</div>
+          <div class="team-record">Juan Andrés · 4-6-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">20,185</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 26%</div>
+          <div class="team-record">W% .400</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">⚡ Más PF de TODA la liga</span>
+        <span class="diff-tag">STRK: W1</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Risk Reward Shi...</div>
+          <div class="team-record">A. Martinez · 4-6-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">19,452</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 23%</div>
+          <div class="team-record">W% .400</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">L3 consecutivas 😬</span>
+        <span class="diff-tag">STRK: L3</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Team IL Capitano</div>
+          <div class="team-record">C. Shihai · 4-6-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">18,489</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 25%</div>
+          <div class="team-record">W% .400</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">L2. El nombre lo dice todo.</span>
+        <span class="diff-tag">STRK: L2</span>
+      </div>
+    </div>
+
+    <div class="matchup-card">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name loser">Team Rida</div>
+          <div class="team-record">erick chacin · 3-7-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score loser-score" style="font-size:16px;min-width:64px">16,119</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 4%</div>
+          <div class="team-record">W% .300</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">Menos PF de la liga 💀</span>
+        <span class="diff-tag">STRK: W2</span>
+      </div>
+    </div>
+
+    <div class="matchup-card">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name loser">Call of Mafia</div>
+          <div class="team-record">Diego Perdomo · 2-8-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score loser-score" style="font-size:16px;min-width:64px">17,686</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 4%</div>
+          <div class="team-record">W% .200</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">2-8. La mafia perdió el control.</span>
+        <span class="diff-tag">STRK: L1</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- POWER RANKINGS -->
+<div class="rankings-section" id="rankings">
+  <p class="section-label">Power Rankings — Semana 11 · Ambas Ligas</p>
+  <table class="rankings-table">
+    <tbody>
+      <tr>
+        <td><span class="rank-num top3">01</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Road to the Tit...</div>
+          <div class="rank-comment">Elquin Mo · Liga Nacional — "8-2 y líder indiscutible. Nadie lo ha bajado del trono. El speech del campeonato ya lo tiene ensayado."</div>
+        </td>
+        <td><span class="rank-record">8-2-0</span></td>
+        <td><span class="rank-pts">19,283 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num top3">02</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Baby Lions</div>
+          <div class="rank-comment">Jesus "El Dictador" Pozo · Liga Americana — "Líder de su división con 7-3 y más PF de la Liga Americana. Sólido por arriba y por abajo."</div>
+        </td>
+        <td><span class="rank-record">7-3-0</span></td>
+        <td><span class="rank-pts">20,094 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num top3">03</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Hermagoras</div>
+          <div class="rank-comment">H. Homez · Liga Nacional — "W4 consecutivas. No habla mucho en el grupo pero su récord habla por él. Peligroso."</div>
+        </td>
+        <td><span class="rank-record">7-3-0</span></td>
+        <td><span class="rank-pts">19,077 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">04</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Chandu</div>
+          <div class="rank-comment">M. Gutiérrez · Liga Nacional — "7-3 y W3. El callado que puede sorprender a todos en playoffs. Hay que tenerle respeto."</div>
+        </td>
+        <td><span class="rank-record">7-3-0</span></td>
+        <td><span class="rank-pts">18,442 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">05</span></td>
+        <td><span class="rank-move move-up">↑3</span></td>
+        <td>
+          <div class="rank-manager">Mambas Leon Out</div>
+          <div class="rank-comment">S. Casilla · Liga Americana — "2do en su división con 6-4 y le va mejor que a Otaku's dentro de la Liga Americana. Consistentes. Suben en este ranking."</div>
+        </td>
+        <td><span class="rank-record">6-4-0</span></td>
+        <td><span class="rank-pts">18,719 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">06</span></td>
+        <td><span class="rank-move move-up">↑2</span></td>
+        <td>
+          <div class="rank-manager">Inashiro Gakko</div>
+          <div class="rank-comment">Emir Sayago · Liga Nacional — "6-4 y sólido. Playoff % del 75% lo mantiene bien posicionado. Hace las cosas sin ruido y los resultados lo respaldan."</div>
+        </td>
+        <td><span class="rank-record">6-4-0</span></td>
+        <td><span class="rank-pts">19,772 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">07</span></td>
+        <td><span class="rank-move move-up">↑1</span></td>
+        <td>
+          <div class="rank-manager">Team Otaku's</div>
+          <div class="rank-comment">A. Quintero · Liga Americana — "No sabemos cómo está en esta posición con los regalos que le ha hecho a Emir, pero se mantiene con buen récord. En esta liga donde se tradea fuerte, Quintero sabe moverse. Suben."</div>
+        </td>
+        <td><span class="rank-record">6-4-0</span></td>
+        <td><span class="rank-pts">18,229 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">08</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Hasbulla Magomedov</div>
+          <div class="rank-comment">Luis Pirela · Liga Nacional — "El PF más alto de toda su división con 19,834. Tiene los mejores jugadores pero el calendario no le ha dado tregua. 5-5 no refleja lo que este equipo realmente vale."</div>
+        </td>
+        <td><span class="rank-record">5-5-0</span></td>
+        <td><span class="rank-pts">19,834 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">09</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Los pichones</div>
+          <div class="rank-comment">M. Ramirez · Liga Americana — "4to en su división con 5-5 pero con buen PF. Puede escalar si mantiene el roster limpio sin trades que lo hundan — y si tradea, que sea con más personas del fantasy que no sean sus únicos dos amigos."</div>
+        </td>
+        <td><span class="rank-record">5-5-0</span></td>
+        <td><span class="rank-pts">19,548 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">10</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Team Boli</div>
+          <div class="rank-comment">Nelson Lozano · Liga Nacional — "5-5 con W1. En una liga de trades, si Boli se mueve bien puede subir. Y si su primo termina de hundirse del todo, sabemos que le terminará dando el resto del equipo — y así es como puede subir de verdad."</div>
+        </td>
+        <td><span class="rank-record">5-5-0</span></td>
+        <td><span class="rank-pts">19,373 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">11</span></td>
+        <td><span class="rank-move move-down">↓6</span></td>
+        <td>
+          <div class="rank-manager">Los Peloteros</div>
+          <div class="rank-comment">Juan Andrés · Liga Americana — "Tenían el mejor PF de toda la liga, pero los trades de esta temporada les destruyeron el roster. Ya no son el mismo equipo temible del arranque. Bajan fuerte."</div>
+        </td>
+        <td><span class="rank-record">4-6-0</span></td>
+        <td><span class="rank-pts">20,185 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">12</span></td>
+        <td><span class="rank-move move-down">↓1</span></td>
+        <td>
+          <div class="rank-manager">Risk Reward Shi...</div>
+          <div class="rank-comment">A. Martinez · Liga Americana — "L3 consecutivas. El nombre era una advertencia que nadie tomó en serio. El riesgo salió mal."</div>
+        </td>
+        <td><span class="rank-record">4-6-0</span></td>
+        <td><span class="rank-pts">19,452 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">13</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Locos y Hambre...</div>
+          <div class="rank-comment">E. Rosas & N. Chávez · Liga Nacional — "5-5 pero en caída con L2. El playoff se aleja. El día que estos dos se pongan de acuerdo para realizar un trade, quizás les vaya mejor. Hasta entonces, se quedan viendo."</div>
+        </td>
+        <td><span class="rank-record">5-5-0</span></td>
+        <td><span class="rank-pts">18,312 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">14</span></td>
+        <td><span class="rank-move move-down">↓1</span></td>
+        <td>
+          <div class="rank-manager">Team IL Capitano</div>
+          <div class="rank-comment">C. Shihai · Liga Americana — "4-6 y L2. El IL los tiene a ellos también. Nombre profético."</div>
+        </td>
+        <td><span class="rank-record">4-6-0</span></td>
+        <td><span class="rank-pts">18,489 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">15</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">South Park LLB</div>
+          <div class="rank-comment">Pedro García · Liga Nacional — "L4 seguidas. Stan y Kyle tampoco ganan en el fantasy. El roster necesita una cirugía urgente."</div>
+        </td>
+        <td><span class="rank-record">3-7-0</span></td>
+        <td><span class="rank-pts">17,477 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num">16</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Team n*gg@</div>
+          <div class="rank-comment">A. Montero · Liga Nacional — "3-7 pero con W1 esta semana. ¿Resurrección? Si se mueven bien todavía hay un hilo de esperanza — muy delgado. Y si ese hilo se rompe, ya sabemos con qué jugadores terminará... los del primo del Boli."</div>
+        </td>
+        <td><span class="rank-record">3-7-0</span></td>
+        <td><span class="rank-pts">17,783 PF</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num bottom">17</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Team Rida</div>
+          <div class="rank-comment">E. Chacin · Liga Americana — "3-7 y el menor PF de toda la liga. A pesar de que Dunkeros les devolvió el aire con su resumen semanal, aún no terminan de arrancar del todo. El silencio sigue siendo ensordecedor."</div>
+        </td>
+        <td><span class="rank-record">3-7-0</span></td>
+        <td><span class="rank-pts">16,119 PF 💀</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num bottom">18</span></td>
+        <td><span class="rank-move move-down">↓1</span></td>
+        <td>
+          <div class="rank-manager">Call of Mafia</div>
+          <div class="rank-comment">Diego Perdomo · Liga Americana — "2-8. El único equipo con ese récord en toda la liga. El fondo del pozo. Pirela ya pidió que lo eliminen de la faz de la tierra y el ranking le da la razón."</div>
+        </td>
+        <td><span class="rank-record">2-8-0</span></td>
+        <td><span class="rank-pts">17,686 PF 🪦</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- NOTICIAS -->
+<div class="news-section" id="noticias">
+  <p class="section-label">MLB Esta Semana — Drama, Apuestas & Playoff Race</p>
+
+  <!-- FILA 1: Nota principal + sidebar -->
+  <div class="news-grid">
+    <div class="news-main">
+      <span class="news-tag tag-lesion">🎭 Drama del Vestuario</span>
+      <h2 class="news-headline">Soto y Lindor: los Mets tienen dos estrellas que nunca fueron amigos</h2>
+      <p class="news-body">
+        El drama más grande de la temporada no está en el campo — está en el vestuario de los Mets. Lindor y Soto nunca conectaron desde el día uno. La historia dice que Soto amaba a Aaron Judge en los Yankees, y cuando llegó a Nueva York esperaba ese mismo vínculo con Lindor. Nunca pasó. Según reportes, <em>esencialmente nunca se hablaban</em> fuera del juego.
+        <br><br>
+        Ahora los Mets están <strong style="color:var(--red)">29-37</strong>, Lindor lleva semanas en el IL con una lesión en el tobillo, y un insider de la MLB ya dijo abiertamente: <strong style="color:var(--red)">"No me sorprendería ver a Lindor en el mercado de cambios."</strong> Si el trade ocurre, sería la bomba del deadline de agosto.
+      </p>
+    </div>
+    <div class="news-sidebar">
+      <div class="news-small">
+        <span class="news-tag tag-lesion">🔴 Bomba</span>
+        <div class="news-small-headline">Aaron Judge al IL — fuera hasta julio/agosto — retorno posible agosto o septiembre</div>
+        <div class="news-small-body">Fractura por estrés en la primera costilla derecha. Yankees (37-21) lo extrañan. Re-evaluación en 4-6 semanas. Si lo tienes, activa el IL ahora mismo.</div>
+      </div>
+      <div class="news-small">
+        <span class="news-tag tag-waiver">🟢 Regresa el mejor</span>
+        <div class="news-small-headline">Tarik Skubal vuelve este fin de semana</div>
+        <div class="news-small-body">El Cy Young defensor regresa del IL. Lanzó bullpen session esta semana. Si lo tienes stasheado, prepárate para activarlo.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILA 2: Records actualizados equipos -->
+  <div style="margin-top:2px;">
+    <p class="section-label" style="margin-top:24px;">📊 Equipos MLB — Lo que los números no te dicen</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;">
+
+      <div class="news-small" style="background:var(--dark2);padding:22px;">
+        <span class="news-tag tag-waiver">🏆 40-20</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Atlanta Braves — el mejor récord del béisbol y nadie habla de ellos</div>
+        <div class="news-small-body" style="margin-top:8px;">Lideran la MLB con 40-20 y están a +900 en las apuestas. Eso significa que todo el mundo sabe que son buenos pero nadie cree que van a ganar. Classic Atlanta. Están 9 juegos sobre los Phillies. Si esto fuera cualquier otro equipo, sería la historia del año.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark2);padding:22px;">
+        <span class="news-tag tag-waiver">👑 37-21</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Los Dodgers — van por el three-peat y el mundo los sigue</div>
+        <div class="news-small-body" style="margin-top:8px;">Campeones de las últimas dos Series Mundiales. Favoritos a +190. El 23% de todo el dinero de apuestas va para ellos. Con Judge lesionado en los Yankees, el camino se despejó. Ohtani con ERA 0.74 como pitcher. Shohei jugando béisbol de otro planeta.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark2);padding:22px;">
+        <span class="news-tag tag-general">🤫 Líderes del AL</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Tampa Bay Rays — ganan en silencio y nadie los respeta</div>
+        <div class="news-small-body" style="margin-top:8px;">Mejor récord de la Liga Americana y están en el puesto 22 en tickets de apuesta. Llevan años haciendo esto — ganar con presupuesto de Triple-A y roster de nadie. No tienen estrellas, tienen sistemas. Clásico modo Rays. Nunca los subestimen.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark2);padding:22px;">
+        <span class="news-tag tag-lesion">💸 29-37</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">NY Mets — $500 millones de nómina para esto</div>
+        <div class="news-small-body" style="margin-top:8px;">El equipo más caro de la historia del béisbol va 14 juegos detrás de los Braves. Soto y Lindor no se hablan, Lindor está en el IL, y se rumorea que lo van a tradear. Están considerando ser vendedores en junio. En junio. Con esa nómina. Brillante.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark2);padding:22px;">
+        <span class="news-tag tag-waiver">📈 Dark horse</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Milwaukee Brewers — el equipo que siempre aparece</div>
+        <div class="news-small-body" style="margin-top:8px;">A +1700 en apuestas pero con el NL Central más competitivo en años — cinco equipos peleando el primer lugar. Los Brewers son el equipo que nadie menciona en octubre y siempre están ahí. La mejor apuesta de valor del mercado si quieren tirar unos dólares.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark2);padding:22px;">
+        <span class="news-tag tag-general">💣 Bomba de agosto</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Skubal al mercado — y los Dodgers ya están al teléfono</div>
+        <div class="news-small-body" style="margin-top:8px;">Si Skubal regresa saludable y los Tigers siguen perdiendo, lo tradean antes del 3 de agosto. Los Dodgers son el destino más mencionado. Imagínate a Skubal + Ohtani en la misma rotación. El béisbol no estaría listo para eso.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FILA 3: Estadísticas individuales y carreras -->
+  <div style="margin-top:2px;">
+    <p class="section-label" style="margin-top:24px;">🏅 Premios Individuales & Carreras Estadísticas 2026</p>
+    <div class="news-grid">
+      <div class="news-main">
+        <span class="news-tag tag-waiver">🔥 Rivalidad del año</span>
+        <h2 class="news-headline">Arraez vs Otto Lopez — ¿Puede el dominicano robarle el título al monstruo del contacto?</h2>
+        <p class="news-body">
+          Luis Arraez lleva 3 títulos de bateo consecutivos con 3 equipos distintos — Twins, Marlins y Padres — algo que nunca se había visto en la historia del béisbol. Ahora con los Giants busca el 4to, y su tasa de contacto de 94.7% lleva 4 años siendo la mejor de la MLB. Parecía imposible detenerlo.
+          <br><br>
+          Pero Otto Lopez de los Marlins está armando tremenda pelea. El dominicano-canadiense viene bateando <strong style="color:var(--green)">.342 de average con 10 rachas de múltiples hits en mayo</strong> — llegó a liderar la MLB en promedio y en junio sigue ardiendo con .330+. En mayo bateó .384 (28-for-73). No está jugando, está <em>destruyendo</em>.
+          <br><br>
+          <strong style="color:var(--green);">La pregunta es:</strong> ¿Puede un jugador sin el historial de Arraez mantener ese ritmo toda la temporada? Los que tienen a Otto Lopez en sus rosters están rezando que sí.
+        </p>
+      </div>
+      <div class="news-sidebar">
+        <div class="news-small">
+          <span class="news-tag tag-general">🥇 Cy Young AL</span>
+          <div class="news-small-headline">Cam Schlittler (Yankees) — 7-2, ERA 1.50, 81 K en 12 aperturas</div>
+          <div class="news-small-body">Con Skubal en el IL, el joven de los Yankees tomó el mando. El 2do ERA más bajo en la historia de un Yankee en sus primeros 12 aperturas. Era desconocido en abril — ahora es favorito.</div>
+        </div>
+        <div class="news-small">
+          <span class="news-tag tag-general">🏆 Cy Young NL</span>
+          <div class="news-small-headline">Cristopher Sánchez (Phillies) — 7-2, ERA 1.46, 103 K</div>
+          <div class="news-small-body">El zurdo de Filadelfia lidera la carrera del NL. Paul Skenes va 6-4 con ERA 3.00 — sigue en carrera pero ya no es el favorito. Y Ohtani tiene ERA 0.74 pero no califica todavía por innings.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats individuales -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;margin-top:2px;">
+
+      <div class="news-small" style="background:var(--dark2);padding:22px;">
+        <span class="news-tag tag-waiver">💣 HR líder</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Kyle Schwarber — 23 HR, en pace de 66 en la temporada</div>
+        <div class="news-small-body" style="margin-top:8px;">El año pasado pegó 56. Ahora va en pace de 66 — lo que empataría con Sosa como el 3er total más alto en la historia. A los 33 años, está envejeciendo como vino francés.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark2);padding:22px;">
+        <span class="news-tag tag-general">🔥 MVP AL</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Bobby Witt Jr. — nuevo favorito tras caída de Judge</div>
+        <div class="news-small-body" style="margin-top:8px;">Con Judge en el IL, Witt Jr. lidera la carrera al MVP del AL. El mejor SS de la liga los últimos 2 años. Poder, velocidad y promedio — el paquete completo que Judge ya no puede ofrecer ahora mismo.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark2);padding:22px;">
+        <span class="news-tag tag-general">🤖 Ohtani — dos premios posibles</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">ERA 0.74 como pitcher + monstruo al bate</div>
+        <div class="news-small-body" style="margin-top:8px;">No califica oficialmente todavía por innings, pero sus números como pitcher son absurdos. Al bate sigue siendo Ohtani. Si llega a clasificar como pitcher, puede pelear dos premios individuales al mismo tiempo.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark2);padding:22px;">
+        <span class="news-tag tag-waiver">🆕 Phenom</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Jacob Misiorowski (Brewers) — el pitcher que nadie pronuncia bien</div>
+        <div class="news-small-body" style="margin-top:8px;">Nadie lo conocía en abril. Ahora está en la carrera al Cy Young del NL. Los Brewers tienen una joya y el béisbol apenas está aprendiendo su nombre.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FILA 4: TOP FANTASY SEMANA 11 -->
+  <div style="margin-top:2px;">
+    <p class="section-label" style="margin-top:24px;">⚡ Top Fantasy — Los que están ardiendo esta semana</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px;">
+
+      <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--green);">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--green);letter-spacing:2px;margin-bottom:8px;">🥇 INTOCABLE</div>
+        <div class="news-small-headline" style="font-size:15px;">Jung Hoo Lee (Giants)</div>
+        <div class="news-small-body" style="margin-top:6px;">Lleva semanas bateando como si el béisbol fuera un videojuego en modo fácil. Ha sido el bateador más consistente de los Giants y uno de los más calientes de toda la liga. Si lo tienes, agradece. Si no lo tienes, llora.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--green);">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--green);letter-spacing:2px;margin-bottom:8px;">🔥 EL PERSEGUIDOR</div>
+        <div class="news-small-headline" style="font-size:15px;">Otto Lopez (Marlins)</div>
+        <div class="news-small-body" style="margin-top:6px;">Viene persiguiendo a Arraez por el título de bateo como si fuera una deuda personal. El dominicano-canadiense está en racha y no da señales de parar. En una liga que se está cayendo a pedazos como los Marlins, Lopez es la única razón para ver sus juegos.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--green);">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--green);letter-spacing:2px;margin-bottom:8px;">💣 EL GRANDULÓN</div>
+        <div class="news-small-headline" style="font-size:15px;">Brandon Marsh (Phillies)</div>
+        <div class="news-small-body" style="margin-top:6px;">Marsh viene pegando jonrones como si le debieran dinero. Juega en Filadelfia con una de las ofensivas más peligrosas de la Nacional — eso significa oportunidades, y Marsh las está aprovechando todas. Pónganle ojo.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--leather);">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--leather);letter-spacing:2px;margin-bottom:8px;">⚾ EL REGRESADO</div>
+        <div class="news-small-headline" style="font-size:15px;">Troy Melton (Tigers)</div>
+        <div class="news-small-body" style="margin-top:6px;">Estuvo en el IL y cuando regresó, regresó con ganas. Detroit no tiene mucho de qué alegrarse esta temporada, pero Melton ha sido uno de los pocos motivos. Si está libre en tu liga, es una joya que nadie está viendo.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--leather);">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--leather);letter-spacing:2px;margin-bottom:8px;">📈 DE VUELTA</div>
+        <div class="news-small-headline" style="font-size:15px;">Gleyber Torres (regresó del IL)</div>
+        <div class="news-small-body" style="margin-top:6px;">Torres es ese jugador que cuando está sano produce — y cuando se lesiona te pregunta por qué lo tienes. Ahorita está sano y produciendo. Aprovecha mientras dure, porque con Gleyber nunca sabes cuánto tiempo más.</div>
+      </div>
+
+      <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--leather);">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--leather);letter-spacing:2px;margin-bottom:8px;">💎 EL SILENCIOSO</div>
+        <div class="news-small-headline" style="font-size:15px;">Nick Gonzales (Pirates)</div>
+        <div class="news-small-body" style="margin-top:6px;">No va a salir en ESPN, no va a tener un highlight viral, y nadie lo va a mencionar en el grupo de WhatsApp. Pero semana a semana da hits, da carreras y no falla. Es el tipo de jugador que gana fantasy en silencio mientras los demás pelean por Ohtani.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- NOVATOS -->
+<div class="news-section" id="novatos">
+  <p class="section-label">🌟 Novatos & Prospectos — Semana 11 · Lo más fresco</p>
+
+  <div class="news-grid">
+    <div class="news-main">
+      <span class="news-tag tag-lesion">🔴 Bajado esta semana</span>
+      <h2 class="news-headline">Brayan Bello — de promesa a Triple-A en una semana</h2>
+      <p class="news-body">
+        El dominicano de los Red Sox fue optado a Triple-A Worcester el 5 de junio después de permitir 8 carreras contra los Orioles. Bello terminó con ERA de 6.34 en 61 innings y un récord de 2-6. Lo más doloroso: en cuatro salidas como relevo había sido dominante con ERA de 0.71 en 25 innings — pero como abridor, fue un desastre.
+        <br><br>
+        Antes de que lo bajaran, Bello dijo en conferencia: <em>"Dejen de hablar de bullpen. Siempre he sido abridor."</em> Horas después lo optaron. El manager interino Chad Tracy dijo que fue una "decisión muy difícil." Boston también movió a Garrett Crochet al IL de 60 días por una distensión del lat.
+        <br><br>
+        <strong style="color:var(--red);">Fantasy impact: DROPPEA a Bello.</strong> No hay línea de tiempo clara para su regreso y Boston tiene sus problemas encima.
+      </p>
+    </div>
+    <div class="news-sidebar">
+      <div class="news-small">
+        <span class="news-tag tag-waiver">✅ Ya está arriba</span>
+        <div class="news-small-headline">Colt Emerson (Mariners) — debutó el 17 de mayo, 20 años</div>
+        <div class="news-small-body">Lo subieron de emergencia y se convirtió en el Mariner más joven en debutar desde Félix Hernández en 2005. Está ajustándose al béisbol de las mayores pero el talento es obvio. Dale tiempo — puede ser una pieza importante en lo que queda de temporada.</div>
+      </div>
+      <div class="news-small">
+        <span class="news-tag tag-general">📈 En llamas</span>
+        <div class="news-small-headline">Max Clark (Tigers) — .352 BA en Triple-A, ¿próximo llamado?</div>
+        <div class="news-small-body">Detroit perdió a Parker Meadows y Clark está quemando el Triple-A. Cuando un equipo tiene necesidad y el prospecto está así de caliente, el llamado es cuestión de tiempo. Nombre a stashear.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Segunda fila -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;margin-top:2px;">
+
+    <div class="news-small" style="background:var(--dark2);padding:22px;">
+      <span class="news-tag tag-waiver">🔥 Candidato ROY</span>
+      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Munetaka Murakami (White Sox) — lidera novatos en HR y OPS</div>
+      <div class="news-small-body" style="margin-top:8px;">Nadie lo quiso pagar bien en el offseason. Los White Sox lo agarraron barato. Ahora lidera los rookies en jonrones y tiene a toda la liga con la cara roja de vergüenza. El béisbol tiene una forma muy cruel de dar lecciones.</div>
+    </div>
+
+    <div class="news-small" style="background:var(--dark2);padding:22px;">
+      <span class="news-tag tag-general">⚾ Extensión histórica</span>
+      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Konnor Griffin (Pirates) — $140M a los 19 años, ya estabilizado</div>
+      <div class="news-small-body" style="margin-top:8px;">Arrancó frío y las críticas llovieron. Pero Griffin tiene 20 años y ya se estabilizó. Los Pirates apostaron $140M por él — la apuesta más grande en su historia. Si funciona, son genios. Si no... bueno, son los Pirates. Ya están acostumbrados.</div>
+    </div>
+
+    <div class="news-small" style="background:var(--dark2);padding:22px;">
+      <span class="news-tag tag-waiver">🟢 Por llegar pronto</span>
+      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Ralphy Velazquez (?) — TOP prospecto de 1B destruyendo Triple-A</div>
+      <div class="news-small-body" style="margin-top:8px;">El prospecto #4 del béisbol podría subir directo a Oakland después del Juego de Estrellas. No corras, pero tampoco te duermas. Cuando suba, todos van a querer agarrarlo al mismo tiempo.</div>
+    </div>
+
+    <div class="news-small" style="background:var(--dark2);padding:22px;">
+      <span class="news-tag tag-lesion">⚠️ En el IL</span>
+      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Garrett Crochet (Red Sox) — IL 60 días por distensión del lat</div>
+      <div class="news-small-body" style="margin-top:8px;">Boston lo trajo con grandes expectativas y en pocas semanas ya está en el IL de 60 días con el lat. Bello abajo, Crochet lesionado. La rotación de los Red Sox está tan rota como su temporada.</div>
+    </div>
+
+    <div class="news-small" style="background:var(--dark2);padding:22px;">
+      <span class="news-tag tag-waiver">📅 Julio llega</span>
+      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Leo De Vries (Athletics) — predicho para el All-Star break</div>
+      <div class="news-small-body" style="margin-top:8px;">El prospecto #4 del béisbol podría jugar el Futures Game y subir directo a Oakland después del break. Stasheenlo en dynasty si tienen el espacio — el potencial es de superstar.</div>
+    </div>
+
+    <div class="news-small" style="background:var(--dark2);padding:22px;">
+      <span class="news-tag tag-general">👀 Ojo en Giants</span>
+      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Bryce Eldridge (Giants) — el mejor prospecto de poder de la MLB</div>
+      <div class="news-small-body" style="margin-top:8px;">Los Giants no jonronean, no anotan, y ven el béisbol pasar. Eldridge es el prospecto de poder más temido del sistema y San Francisco lo necesita ya. El llamado podría venir antes de lo esperado.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- WTF MOMENT -->
+<div class="news-section" id="wtf">
+  <p class="section-label">🤯 WTF Moment of the Week
+    <span style="font-size:10px;color:#444;letter-spacing:1px;font-style:italic;text-transform:none;margin-left:10px;">Esta sección se actualiza semanalmente según la controversia que ustedes mismos generen.</span>
+  </p>
+
+  <div class="news-grid">
+    <div class="news-main" style="border-left:3px solid var(--red);">
+      <span class="news-tag tag-lesion">🤯 SEMANA 11</span>
+      <h2 class="news-headline">Le dieron el resumen a Dunkeros y... mejor no lo hubieran dado</h2>
+      <p class="news-body">
+        Cada semana alguien se encarga del resumen de la liga. Esta semana le tocó a <strong style="color:var(--red)">Juan Urdaneta — Dunkeros</strong>. Y el grupo entero se arrepintió.
+        <br><br>
+        Lo que entregó fue catalogado por múltiples fuentes del WhatsApp como <em>"una completa mierda"</em>, <em>"peor que no haber enviado nada"</em> y <em>"un insulto a la inteligencia colectiva del grupo."</em> Se rumorea que varios managers consideraron abandonar la liga después de leerlo.
+        <br><br>
+        <strong style="color:var(--red);">Dunkeros, con todo el respeto del mundo:</strong> quédate en tu lane. El resumen no es lo tuyo. Y ahora toda la liga lo sabe.
+        <br><br>
+        <span style="font-size:12px;color:#555;font-style:italic;">*La redacción de La Columna Semanal de Pirelowski no se hace responsable por el daño cerebral causado por dicho resumen.*</span>
+      </p>
+    </div>
+    <div class="news-sidebar">
+      <div class="news-small" style="background:var(--dark3);border:1px solid #222;">
+        <span class="news-tag tag-lesion">📋 El veredicto del grupo</span>
+        <div class="news-small-headline">Calificación colectiva del resumen de Dunkeros</div>
+        <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:12px;color:#666;">Contenido</span>
+            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">1.2 / 10</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:12px;color:#666;">Esfuerzo</span>
+            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">0.5 / 10</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:12px;color:#666;">¿Lo releerías?</span>
+            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">JAMÁS</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:12px;color:#666;">Veredicto</span>
+            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">💀 REPROBADO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOP 3 AL TÍTULO -->
+<div class="rankings-section" id="top3">
+  <p class="section-label">🏆 Top 3 — Favoritos al Título · Semana 11</p>
+  <table class="rankings-table">
+    <tbody>
+      <tr>
+        <td><span class="rank-num top3">01</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Road to the Tit... — Elking Mo</div>
+          <div class="rank-comment">"8-2 y líder de la Liga Nacional. El único que puede perder el título es él mismo. Ya huele a campeón."</div>
+        </td>
+        <td><span class="rank-record">8-2-0</span></td>
+        <td><span class="rank-pts">88% playoff</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num top3">02</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Hermagoras — H. Homez</div>
+          <div class="rank-comment">"Apenas manda una que otra nota de voz al grupo y ahí para todo. No tradea — y cuando lo intenta, quiere robar de una manera tan descarada que hace quedar bien a Perdomo. Sus rivales esas semanas parecen equipos de Triple-A. ¿Talento? ¿Suerte? Nadie lo sabe. Pero W4 seguidas con ese método solo tiene una explicación: la leche le está subiendo a niveles históricos."</div>
+        </td>
+        <td><span class="rank-record">7-3-0</span></td>
+        <td><span class="rank-pts">83% playoff</span></td>
+      </tr>
+      <tr>
+        <td><span class="rank-num top3">03</span></td>
+        <td><span class="rank-move move-same">—</span></td>
+        <td>
+          <div class="rank-manager">Baby Lions — Jesus Pozo</div>
+          <div class="rank-comment">"El Dictador con cara de no haber roto un plato en su vida. Mientras todos pelean y se gritan en el grupo, él maquina en silencio — buscando la manera de controlar cada jugador del fantasy como si fuera un ajedrez. Sigue siendo el más completo del AL y probablemente ya sabe cómo va a ganar el título. Nosotros todavía no."</div>
+        </td>
+        <td><span class="rank-record">7-3-0</span></td>
+        <td><span class="rank-pts">70% playoff</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:#333;font-family:'Share Tech Mono',monospace;padding:12px 0;letter-spacing:1px;font-style:italic;">* Este ranking es sujeto a cambio cada semana según récord, momentum y análisis interno de la liga. Lo que hoy es Top 3, mañana puede no serlo.</p>
+</div>
+
+<!-- MVP DE LA SEMANA -->
+<div class="news-section" id="mvp">
+  <p class="section-label">⭐ MVP de la Semana · Semana 11
+    <span style="font-size:10px;color:#444;letter-spacing:1px;font-style:italic;text-transform:none;margin-left:10px;">Varía cada semana. Depende de ti ganártelo.</span>
+  </p>
+  <div class="news-grid">
+    <div class="news-main" style="border-left:3px solid var(--red);">
+      <span class="news-tag tag-lesion">🚫 SEMANA 11</span>
+      <h2 class="news-headline">No hay MVP esta semana. Ninguno se lo merece.</h2>
+      <p class="news-body">
+        Seamos honestos. La gran mayoría de los matchups de esta semana fueron una <strong style="color:var(--red)">soberana mierda</strong>. Partidos sin emoción, decisiones cuestionables y resultados que dan vergüenza ajena. No hubo un manager que se destacara lo suficiente como para llevarse el título.
+        <br><br>
+        Esta redacción se niega a premiar la mediocridad. El MVP existe para reconocer excelencia — y esta semana, la excelencia brilló por su ausencia.
+        <br><br>
+        <strong style="color:#555;font-style:italic;">Sin embargo... hay dos menciones honoríficas que sí se ganaron su reconocimiento.</strong>
+      </p>
+    </div>
+    <div class="news-sidebar">
+      <div class="news-small" style="background:var(--dark3);border-left:2px solid #FBBF24;">
+        <span class="news-tag" style="background:rgba(251,191,36,0.1);color:#FBBF24;">🏅 Mención Honorífica #1</span>
+        <div class="news-small-headline" style="margin-top:8px;">Team Boli — Nelson Lozano</div>
+        <div class="news-small-body" style="margin-top:6px;">A última hora, cuando nadie lo esperaba, Boli movió su equipo, hizo el trade correcto y aseguró una victoria importante. No fue bonito, no fue elegante — pero fue efectivo. Eso cuenta. Mención honorífica bien merecida. 👏</div>
+      </div>
+      <div class="news-small" style="background:var(--dark3);border-left:2px solid #FBBF24;margin-top:2px;">
+        <span class="news-tag" style="background:rgba(251,191,36,0.1);color:#FBBF24;">🏅 Mención Honorífica #2</span>
+        <div class="news-small-headline" style="margin-top:8px;">Baby Lions — Jesus Pozo</div>
+        <div class="news-small-body" style="margin-top:6px;">La mente maestra sigue operando en silencio. Compra pitchers, los usa, los vende, acecha a sus rivales sin que nadie lo vea venir. Sus rivales creen que van ganando el matchup — y Pozo ya está tres movidas adelante. Peligroso. 🦁</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRASH TALK -->
+<div class="trash-section" id="trashtalk">
+  <p class="section-label">Trash Talk Corner — Semana 11 🔥
+    <span style="font-size:10px;color:#444;letter-spacing:1px;font-style:italic;text-transform:none;margin-left:10px;">Se actualiza cada lunes. Los mejores van al Hall of Fame.</span>
+  </p>
+
+  <div style="position:relative;max-width:580px;margin:0 auto;padding:0 36px;">
+
+    <button onclick="moveTT(-1)" style="position:absolute;left:0;top:50%;transform:translateY(-50%);background:var(--dark4);border:1px solid #333;color:var(--cream);width:28px;height:28px;border-radius:50%;font-size:20px;cursor:pointer;line-height:1;z-index:2;">&#8249;</button>
+    <button onclick="moveTT(1)" style="position:absolute;right:0;top:50%;transform:translateY(-50%);background:var(--dark4);border:1px solid #333;color:var(--cream);width:28px;height:28px;border-radius:50%;font-size:20px;cursor:pointer;line-height:1;z-index:2;">&#8250;</button>
+
+    <div id="tt-card" style="background:var(--dark2);padding:28px 24px;border-left:3px solid var(--green);transition:opacity 0.15s ease;">
+      <div id="tt-quote" style="font-size:17px;font-style:italic;color:var(--cream);line-height:1.6;margin-bottom:16px;"></div>
+      <div id="tt-author" style="font-size:12px;font-weight:700;"></div>
+    </div>
+
+    <div style="text-align:center;margin-top:12px;">
+      <span id="tt-counter" style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#444;letter-spacing:2px;"></span>
+    </div>
+    <div id="tt-dots" style="display:flex;justify-content:center;gap:5px;margin-top:8px;"></div>
+  </div>
+</div>
+
+<script>
+  const ttData = [
+    { quote: '"No puedo ser m\u00e1s amigo de Chandurrix."', author: '\u2014 El Gordo Angel rompiendo la amistad p\u00fablicamente \ud83d\udc94', color: '#1DB954' },
+    { quote: '"Gracias a Dios se fue Le\u00f3n y volv\u00ed a ver la victoria."', author: '\u2014 Pozo culpando a Le\u00f3n de todas sus derrotas \ud83d\ude07', color: '#F4A300' },
+    { quote: '"Muerte al Gordo."', author: '\u2014 Chandurrix respondi\u00e9ndole al Gordo sin rodeos \u2620\ufe0f', color: '#C084FC' },
+    { quote: '"\u00bfQu\u00e9 dicen? No los escucho desde la cima."', author: '\u2014 Elquin Mo ignorando al grupo desde el #1 \ud83d\udc51', color: '#38BDF8' },
+    { quote: '"Elquin, no le metéis miedo a nadie. \u00a1Plasta e\u2019 mierda!"', author: '\u2014 El Gordo Angel respondi\u00e9ndole a Elquin desde abajo \ud83e\udea3', color: '#1DB954' },
+    { quote: '"\u00bfAlg\u00fan equipo disponible?"', author: '\u2014 Le\u00f3n tirando la toalla y buscando nueva casa \ud83c\udff3\ufe0f', color: '#FB7185' },
+    { quote: '"Est\u00e1 muy bien esto que acabas de hacer Pirela, pero yo creo que tengo una idea mejor... voy a crear un grupo."', author: '\u2014 Pozo amenazando con crear su propio sitio \ud83d\ude24', color: '#F4A300' },
+    { quote: '"Botgagoras cree que porque envi\u00f3 dos notas de voz hablando de estad\u00edsticas le vamos a parar bolas. \u00a1C\u00e1llate la jeta un mes!"', author: '\u2014 El Gordo Angel harto de los an\u00e1lisis de Hermagoras \ud83d\udcca\ud83d\udd07', color: '#1DB954' },
+    { quote: '"\u00bfNo te dieron totona hoy, gordo?"', author: '\u2014 Elquin atacando al Gordo fuera del terreno del fantasy \ud83d\udca0', color: '#38BDF8' },
+    { quote: '"M\u00e9tete tus trades por el culo, maldito gordo."', author: '\u2014 Perdomo rechazando la propuesta del Gordo \ud83d\udce6\ud83d\udeab', color: '#F87171' },
+  ];
+
+  let ttCurrent = 0;
+
+  function moveTT(dir) {
+    ttCurrent = (ttCurrent + dir + ttData.length) % ttData.length;
+    renderTT();
+  }
+
+  function ttGoTo(i) { ttCurrent = i; renderTT(); }
+
+  function renderTT() {
+    const d = ttData[ttCurrent];
+    const card = document.getElementById('tt-card');
+    card.style.opacity = '0';
+    setTimeout(() => {
+      card.style.borderLeftColor = d.color;
+      document.getElementById('tt-quote').textContent = d.quote;
+      const a = document.getElementById('tt-author');
+      a.textContent = d.author;
+      a.style.color = d.color;
+      document.getElementById('tt-counter').textContent = (ttCurrent + 1) + ' / ' + ttData.length;
+      const dots = document.getElementById('tt-dots');
+      dots.innerHTML = ttData.map((_, i) =>
+        '<span onclick="ttGoTo(' + i + ')" style="width:7px;height:7px;border-radius:50%;background:' + (i === ttCurrent ? d.color : '#333') + ';cursor:pointer;display:inline-block;"></span>'
+      ).join('');
+      card.style.opacity = '1';
+    }, 150);
+  }
+
+  renderTT();
+</script>
+
+<!-- NOTA DEL EDITOR -->
+<div style="width:100%;background:var(--black);padding:48px 24px 0;">
+  <div style="max-width:680px;margin:0 auto;">
+    <p style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--leather);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;text-align:center;">📝 Nota del Editor</p>
+
+    <div style="background:var(--dark2);padding:28px 24px;border-left:3px solid var(--green);">
+      <p style="font-size:13px;color:#888;line-height:1.9;font-style:italic;">
+        Este pequeño espacio dinámico nació con un solo propósito: ofrecerles a todos una vista distinta del fantasy. No solo números, no solo resultados — sino historia, drama, contexto y un poco de caos, que es exactamente lo que hace grande a esta liga.
+        <br><br>
+        Seguimos innovando, seguimos creciendo, y cada semana intentamos traerles algo nuevo. Si en algún momento encuentran un error, un dato fuera de lugar o algo que no cuadra — con todo el respeto del mundo, nos disculpamos. Estamos trabajando de la mejor manera posible para llevarles más alegría, más información y más trash talk a este gran fantasy que tanto queremos.
+        <br><br>
+        Gracias por leer. Gracias por el ruido en el grupo. Y gracias por hacer de esta liga algo que vale la pena cubrir.
+      </p>
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid #222;">
+        <p style="font-family:'Anton',sans-serif;font-size:18px;color:var(--green);letter-spacing:2px;">PIRELOWSKI</p>
+        <p style="font-family:'Share Tech Mono',monospace;font-size:10px;color:#444;letter-spacing:2px;margin-top:4px;">Editor · La Columna Semanal · Temporada 2026</p>
+      </div>
+    </div>
+
+    <!-- La Frase de Pirelowski -->
+    <div style="margin-top:40px;text-align:center;padding-bottom:40px;">
+      <p style="font-family:'Anton',sans-serif;font-size:11px;color:#333;letter-spacing:3px;text-transform:uppercase;">— Frase Semanal de Pirelowski —</p>
+      <p style="font-family:'Anton',sans-serif;font-size:clamp(26px,5vw,40px);color:var(--cream);letter-spacing:1px;margin-top:12px;line-height:1.3;">"Pensar no cuesta.<br><span style="color:var(--green);">Pero en este grupo,<br>pocos lo practican."</span></p>
+      <p style="margin-top:16px;">— <span style="font-family:'Anton',sans-serif;font-size:18px;color:#666;letter-spacing:3px;">PIRELOWSKI</span> &nbsp;·&nbsp; <span style="font-family:'Share Tech Mono',monospace;color:#555;font-size:11px;">Miércoles 10 de junio, 2026</span></p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>⚾ <span>La Columna Semanal de PIRELOWSKI</span> · SHIHAI · DOOBAR · Fantasy MLB 2026 · Cada lunes, sin falta.</p>
+</footer>
+
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // LED score blink on load
+  document.querySelectorAll('.score').forEach((el, i) => {
+    el.style.animationDelay = `${i * 0.08}s`;
+  });
+
+  // Active nav on scroll
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
+    });
+  });
+</script>
+</body>
+</html>
