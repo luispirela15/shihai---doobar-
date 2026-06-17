@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
-<title>La Columna Semanal de Pirelowski · Semana 11</title>
+<title>La Columna Semanal de Pirelowski · Semana 12</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -280,9 +280,15 @@
     padding: 0 24px;
   }
 
+  .rankings-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .rankings-table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 600px;
   }
 
   .rankings-table tr {
@@ -531,8 +537,16 @@
   @media (max-width: 640px) {
     nav { display: none; }
     .news-grid { grid-template-columns: 1fr; }
-    .hero-title { font-size: 52px; }
+    .hero-title { font-size: 42px; }
     .scoreboard-grid { grid-template-columns: 1fr; }
+    .rankings-table { font-size: 12px; }
+    .rank-comment { font-size: 11px; }
+    .rank-manager { font-size: 13px; }
+    .matchup-card { padding: 16px; }
+    .news-main, .news-small { padding: 18px; }
+    .news-headline { font-size: 22px; }
+    header { padding: 0 14px; }
+    .week-badge { font-size: 10px; padding: 3px 8px; }
   }
 </style>
 </head>
@@ -553,30 +567,30 @@
     <a href="#mvp">MVP ⭐</a>
     <a href="#trashtalk">Trash Talk</a>
   </nav>
-  <div class="week-badge">SEMANA 11</div>
+  <div class="week-badge">SEMANA 12</div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-bar">
   <div class="ticker-inner">
-    <span class="ticker-item">🏆 Liga Nacional lidera Road to the Tit... — Elking Mo 8-2</span>
-    <span class="ticker-item">⚡ Liga Americana: Baby Lions en la cima — Jesus Pozo 7-3</span>
-    <span class="ticker-item">🔥 Hermagoras en racha W4 — H. Homez imparable</span>
-    <span class="ticker-item">😬 Call of Mafia 2-8 — Diego Perdomo en modo supervivencia</span>
-    <span class="ticker-item">📊 Power Rankings Semana 11 actualizados</span>
-    <span class="ticker-item">⚠️ Matchup 11: Jun 8 – Jun 14 en curso</span>
-    <span class="ticker-item">🏆 Liga Nacional lidera Road to the Tit... — Elking Mo 8-2</span>
-    <span class="ticker-item">⚡ Liga Americana: Baby Lions en la cima — Jesus Pozo 7-3</span>
-    <span class="ticker-item">🔥 Hermagoras en racha W4 — H. Homez imparable</span>
-    <span class="ticker-item">😬 Call of Mafia 2-8 — Diego Perdomo en modo supervivencia</span>
-    <span class="ticker-item">📊 Power Rankings Semana 11 actualizados</span>
-    <span class="ticker-item">⚠️ Matchup 11: Jun 8 – Jun 14 en curso</span>
+    <span class="ticker-item">🤯 Call of Mafia (2-8) le ganó a Los Peloteros con 2172 pts — el último de la liga dio el golpe</span>
+    <span class="ticker-item">😮 Los pichones derrotaron a Elquin Mo, el líder de la Liga Nacional</span>
+    <span class="ticker-item">💀 Baby Lions de Pozo solo hizo 798 pts — su peor semana del año</span>
+    <span class="ticker-item">⭐ MVP de la Semana: El Gordo, invicto contra Erick todo el año</span>
+    <span class="ticker-item">📊 Power Rankings Semana 12 actualizados</span>
+    <span class="ticker-item">🤯 WTF Moment: Dunkeros amenaza con coñazos — otra vez</span>
+    <span class="ticker-item">🤯 Call of Mafia (2-8) le ganó a Los Peloteros con 2172 pts — el último de la liga dio el golpe</span>
+    <span class="ticker-item">😮 Los pichones derrotaron a Elquin Mo, el líder de la Liga Nacional</span>
+    <span class="ticker-item">💀 Baby Lions de Pozo solo hizo 798 pts — su peor semana del año</span>
+    <span class="ticker-item">⭐ MVP de la Semana: El Gordo, invicto contra Erick todo el año</span>
+    <span class="ticker-item">📊 Power Rankings Semana 12 actualizados</span>
+    <span class="ticker-item">🤯 WTF Moment: Dunkeros amenaza con coñazos — otra vez</span>
   </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <p class="hero-eyebrow">La Columna Semanal de <span style="text-decoration:underline;color:var(--green)">PIRELOWSKI</span> · Edición Semana 11 · Miércoles 10 de junio, 2026</p>
+  <p class="hero-eyebrow">La Columna Semanal de <span style="text-decoration:underline;color:var(--green)">PIRELOWSKI</span> · Edición Semana 12 · Lunes 15 de junio, 2026</p>
   <h1 class="hero-title">FANTASY<br><span>2026</span></h1>
   <p class="hero-sub">La liga de los que saben. Y de los que creen que saben.</p>
 </div>
@@ -590,14 +604,14 @@
       <div class="matchup-teams">
         <div class="team-side">
           <div class="team-name">Road to the Tit...</div>
-          <div class="team-record">Elking Mo · 8-2-0</div>
+          <div class="team-record">Elquin Mo · 8-3-0</div>
         </div>
         <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">19,283</div>
+          <div class="score" style="font-size:16px;min-width:64px">2067</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 88%</div>
-          <div class="team-record">W% .800</div>
+          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 85%</div>
+          <div class="team-record">W% .727</div>
         </div>
       </div>
       <div class="matchup-footer">
@@ -609,39 +623,19 @@
     <div class="matchup-card winner-left">
       <div class="matchup-teams">
         <div class="team-side">
-          <div class="team-name">Hermagoras</div>
-          <div class="team-record">H. Homez · 7-3-0</div>
-        </div>
-        <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">19,077</div>
-        </div>
-        <div class="team-side right">
-          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 83%</div>
-          <div class="team-record">W% .700</div>
-        </div>
-      </div>
-      <div class="matchup-footer">
-        <span class="winner-tag">🔥 En racha W4</span>
-        <span class="diff-tag">STRK: W4</span>
-      </div>
-    </div>
-
-    <div class="matchup-card winner-left">
-      <div class="matchup-teams">
-        <div class="team-side">
           <div class="team-name">Chandu</div>
-          <div class="team-record">M. Gutiérrez · 7-3-0</div>
+          <div class="team-record">M. Gutiérrez · 8-3-0</div>
         </div>
         <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">18,442</div>
+          <div class="score" style="font-size:16px;min-width:64px">2117</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 83%</div>
-          <div class="team-record">W% .700</div>
+          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 82%</div>
+          <div class="team-record">W% .727</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span class="winner-tag">W3 consecutivas</span>
+        <span class="winner-tag">🔥 2117 pts — el más alto de la semana</span>
         <span class="diff-tag">STRK: W3</span>
       </div>
     </div>
@@ -649,19 +643,19 @@
     <div class="matchup-card winner-left">
       <div class="matchup-teams">
         <div class="team-side">
-          <div class="team-name">Inashiro Gakko</div>
-          <div class="team-record">Emir Sayago · 6-4-0</div>
+          <div class="team-name">Hermagoras</div>
+          <div class="team-record">H. Homez · 7-4-0</div>
         </div>
         <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">19,772</div>
+          <div class="score" style="font-size:16px;min-width:64px">1437</div>
         </div>
         <div class="team-side right">
           <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 75%</div>
-          <div class="team-record">W% .600</div>
+          <div class="team-record">W% .636</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span class="winner-tag">6-4 bien posicionado</span>
+        <span class="winner-tag">Se cayó la racha W4</span>
         <span class="diff-tag">STRK: L1</span>
       </div>
     </div>
@@ -669,19 +663,19 @@
     <div class="matchup-card winner-left">
       <div class="matchup-teams">
         <div class="team-side">
-          <div class="team-name">Hasbulla Magomedov</div>
-          <div class="team-record">Luis Pirela · 5-5-0</div>
+          <div class="team-name">Inashiro Gakko</div>
+          <div class="team-record">Emir Sayago · 6-5-0</div>
         </div>
         <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">19,834</div>
+          <div class="score" style="font-size:16px;min-width:64px">1493</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 58%</div>
-          <div class="team-record">W% .500</div>
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 60%</div>
+          <div class="team-record">W% .545</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span class="winner-tag">⚡ Más PF de su división</span>
+        <span class="winner-tag">L1, pierde terreno</span>
         <span class="diff-tag">STRK: L1</span>
       </div>
     </div>
@@ -690,18 +684,18 @@
       <div class="matchup-teams">
         <div class="team-side">
           <div class="team-name">Team Boli</div>
-          <div class="team-record">Nelson Lozano · 5-5-0</div>
+          <div class="team-record">Nelson Lozano · 6-5-0</div>
         </div>
         <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">19,373</div>
+          <div class="score" style="font-size:16px;min-width:64px">1669</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 57%</div>
-          <div class="team-record">W% .500</div>
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 60%</div>
+          <div class="team-record">W% .545</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span class="winner-tag">Puede ir pa' arriba</span>
+        <span class="winner-tag">El trade de último momento dio frutos</span>
         <span class="diff-tag">STRK: W1</span>
       </div>
     </div>
@@ -709,19 +703,39 @@
     <div class="matchup-card winner-left">
       <div class="matchup-teams">
         <div class="team-side">
-          <div class="team-name">Locos y Hambre...</div>
-          <div class="team-record">nestor chavez · 5-5-0</div>
+          <div class="team-name">Hasbulla Magomedov</div>
+          <div class="team-record">Luis Pirela · 6-5-0</div>
         </div>
         <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">18,312</div>
+          <div class="score" style="font-size:16px;min-width:64px">1924</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 33%</div>
-          <div class="team-record">W% .500</div>
+          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 55%</div>
+          <div class="team-record">W% .545</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span class="winner-tag">500 pero con poco margen</span>
+        <span class="winner-tag">⚡ 1924 pts — aplastó a Team n*gg@</span>
+        <span class="diff-tag">STRK: W1</span>
+      </div>
+    </div>
+
+    <div class="matchup-card">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name loser">Locos y Hambre...</div>
+          <div class="team-record">N. Chávez & E. Rosas · 5-6-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score loser-score" style="font-size:16px;min-width:64px">1881</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 25%</div>
+          <div class="team-record">W% .455</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span style="color:var(--green);font-size:10px;font-weight:700;letter-spacing:1px">Le cortaron la racha a Hermagoras</span>
         <span class="diff-tag">STRK: L2</span>
       </div>
     </div>
@@ -730,19 +744,19 @@
       <div class="matchup-teams">
         <div class="team-side">
           <div class="team-name loser">Team n*gg@</div>
-          <div class="team-record">A. Montero · 3-7-0</div>
+          <div class="team-record">A. Montero · 4-7-0</div>
         </div>
         <div class="score-display">
-          <div class="score loser-score" style="font-size:16px;min-width:64px">17,783</div>
+          <div class="score loser-score" style="font-size:16px;min-width:64px">1230</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 4%</div>
-          <div class="team-record">W% .300</div>
+          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 6%</div>
+          <div class="team-record">W% .364</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">Modo milagro activado</span>
-        <span class="diff-tag">STRK: W1</span>
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">Aplastados por Pirela esta semana</span>
+        <span class="diff-tag">STRK: L1</span>
       </div>
     </div>
 
@@ -750,19 +764,19 @@
       <div class="matchup-teams">
         <div class="team-side">
           <div class="team-name loser">South Park LLB</div>
-          <div class="team-record">Pedro García · 3-7-0</div>
+          <div class="team-record">Pedro García · 3-8-0</div>
         </div>
         <div class="score-display">
-          <div class="score loser-score" style="font-size:16px;min-width:64px">17,477</div>
+          <div class="score loser-score" style="font-size:16px;min-width:64px">1591</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 6%</div>
-          <div class="team-record">W% .300</div>
+          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 4%</div>
+          <div class="team-record">W% .273</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">L4 seguidas. Tranquilo.</span>
-        <span class="diff-tag">STRK: L4</span>
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">Perdió contra Chandu y su mejor semana</span>
+        <span class="diff-tag">STRK: L5</span>
       </div>
     </div>
 
@@ -775,19 +789,19 @@
     <div class="matchup-card winner-left">
       <div class="matchup-teams">
         <div class="team-side">
-          <div class="team-name">Baby Lions</div>
-          <div class="team-record">Jesus Pozo · 7-3-0</div>
+          <div class="team-name">Team Otaku's</div>
+          <div class="team-record">A. Quintero · 7-4-0</div>
         </div>
         <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">20,094</div>
+          <div class="score" style="font-size:16px;min-width:64px">1585</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 70%</div>
-          <div class="team-record">W% .700</div>
+          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 65%</div>
+          <div class="team-record">W% .636</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span class="winner-tag">🏆 Líder Liga Americana</span>
+        <span class="winner-tag">🏆 Le ganó a Pozo y se llevó el liderato</span>
         <span class="diff-tag">STRK: W2</span>
       </div>
     </div>
@@ -796,18 +810,38 @@
       <div class="matchup-teams">
         <div class="team-side">
           <div class="team-name">Mambas Leon Out</div>
-          <div class="team-record">S. Casilla · 6-4-0</div>
+          <div class="team-record">S. Casilla · 6-5-0</div>
         </div>
         <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">18,719</div>
+          <div class="score" style="font-size:16px;min-width:64px">1340</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 58%</div>
-          <div class="team-record">W% .600</div>
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 55%</div>
+          <div class="team-record">W% .545</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span class="winner-tag">Peleando el 2do puesto</span>
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">Perdió contra Team IL Capitano</span>
+        <span class="diff-tag">STRK: L1</span>
+      </div>
+    </div>
+
+    <div class="matchup-card">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name loser">Baby Lions</div>
+          <div class="team-record">Jesus Pozo · 7-4-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score loser-score" style="font-size:16px;min-width:64px">798</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 55%</div>
+          <div class="team-record">W% .636</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">💀 798 pts — la peor semana de Pozo en el año</span>
         <span class="diff-tag">STRK: L1</span>
       </div>
     </div>
@@ -815,19 +849,39 @@
     <div class="matchup-card winner-left">
       <div class="matchup-teams">
         <div class="team-side">
-          <div class="team-name">Team Otaku's</div>
-          <div class="team-record">A. Quintero · 6-4-0</div>
+          <div class="team-name">Los pichones</div>
+          <div class="team-record">M. Ramirez · 6-5-0</div>
         </div>
         <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">18,229</div>
+          <div class="score" style="font-size:16px;min-width:64px">2166</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--green);font-size:12px">PLAYOFF 41%</div>
-          <div class="team-record">W% .600</div>
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 60%</div>
+          <div class="team-record">W% .545</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span class="winner-tag">Empate en record con Mambas</span>
+        <span class="winner-tag">😮 Le ganaron al líder Elquin Mo</span>
+        <span class="diff-tag">STRK: W2</span>
+      </div>
+    </div>
+
+    <div class="matchup-card winner-left">
+      <div class="matchup-teams">
+        <div class="team-side">
+          <div class="team-name">Risk Reward Shi...</div>
+          <div class="team-record">A. Martinez · 5-6-0</div>
+        </div>
+        <div class="score-display">
+          <div class="score" style="font-size:16px;min-width:64px">1900</div>
+        </div>
+        <div class="team-side right">
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 30%</div>
+          <div class="team-record">W% .455</div>
+        </div>
+      </div>
+      <div class="matchup-footer">
+        <span class="winner-tag">Rompió la racha L3 ganándole a Team Rida</span>
         <span class="diff-tag">STRK: W1</span>
       </div>
     </div>
@@ -835,19 +889,19 @@
     <div class="matchup-card winner-left">
       <div class="matchup-teams">
         <div class="team-side">
-          <div class="team-name">Los pichones</div>
-          <div class="team-record">M. Ramirez · 5-5-0</div>
+          <div class="team-name">Team IL Capitano</div>
+          <div class="team-record">C. Shihai · 5-6-0</div>
         </div>
         <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">19,548</div>
+          <div class="score" style="font-size:16px;min-width:64px">1875</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 63%</div>
-          <div class="team-record">W% .500</div>
+          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 28%</div>
+          <div class="team-record">W% .455</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span class="winner-tag">PF alto, récord mediocre</span>
+        <span class="winner-tag">Le cortó la racha negativa</span>
         <span class="diff-tag">STRK: W1</span>
       </div>
     </div>
@@ -856,59 +910,19 @@
       <div class="matchup-teams">
         <div class="team-side">
           <div class="team-name">Los Peloteros</div>
-          <div class="team-record">Juan Andrés · 4-6-0</div>
+          <div class="team-record">Juan Andrés · 4-7-0</div>
         </div>
         <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">20,185</div>
+          <div class="score" style="font-size:16px;min-width:64px">1908</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 26%</div>
-          <div class="team-record">W% .400</div>
+          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 15%</div>
+          <div class="team-record">W% .364</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span class="winner-tag">⚡ Más PF de TODA la liga</span>
-        <span class="diff-tag">STRK: W1</span>
-      </div>
-    </div>
-
-    <div class="matchup-card winner-left">
-      <div class="matchup-teams">
-        <div class="team-side">
-          <div class="team-name">Risk Reward Shi...</div>
-          <div class="team-record">A. Martinez · 4-6-0</div>
-        </div>
-        <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">19,452</div>
-        </div>
-        <div class="team-side right">
-          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 23%</div>
-          <div class="team-record">W% .400</div>
-        </div>
-      </div>
-      <div class="matchup-footer">
-        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">L3 consecutivas 😬</span>
-        <span class="diff-tag">STRK: L3</span>
-      </div>
-    </div>
-
-    <div class="matchup-card winner-left">
-      <div class="matchup-teams">
-        <div class="team-side">
-          <div class="team-name">Team IL Capitano</div>
-          <div class="team-record">C. Shihai · 4-6-0</div>
-        </div>
-        <div class="score-display">
-          <div class="score" style="font-size:16px;min-width:64px">18,489</div>
-        </div>
-        <div class="team-side right">
-          <div class="team-name" style="color:var(--leather);font-size:12px">PLAYOFF 25%</div>
-          <div class="team-record">W% .400</div>
-        </div>
-      </div>
-      <div class="matchup-footer">
-        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">L2. El nombre lo dice todo.</span>
-        <span class="diff-tag">STRK: L2</span>
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">Perdió contra Call of Mafia</span>
+        <span class="diff-tag">STRK: L1</span>
       </div>
     </div>
 
@@ -916,39 +930,39 @@
       <div class="matchup-teams">
         <div class="team-side">
           <div class="team-name loser">Team Rida</div>
-          <div class="team-record">erick chacin · 3-7-0</div>
+          <div class="team-record">E. Chacin · 3-8-0</div>
         </div>
         <div class="score-display">
-          <div class="score loser-score" style="font-size:16px;min-width:64px">16,119</div>
+          <div class="score loser-score" style="font-size:16px;min-width:64px">1695</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 4%</div>
-          <div class="team-record">W% .300</div>
+          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 3%</div>
+          <div class="team-record">W% .273</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">Menos PF de la liga 💀</span>
-        <span class="diff-tag">STRK: W2</span>
+        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">Se le cortó la racha W2</span>
+        <span class="diff-tag">STRK: L1</span>
       </div>
     </div>
 
-    <div class="matchup-card">
+    <div class="matchup-card winner-left">
       <div class="matchup-teams">
         <div class="team-side">
-          <div class="team-name loser">Call of Mafia</div>
-          <div class="team-record">Diego Perdomo · 2-8-0</div>
+          <div class="team-name">Call of Mafia</div>
+          <div class="team-record">Diego Perdomo · 3-8-0</div>
         </div>
         <div class="score-display">
-          <div class="score loser-score" style="font-size:16px;min-width:64px">17,686</div>
+          <div class="score" style="font-size:16px;min-width:64px">2172</div>
         </div>
         <div class="team-side right">
-          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 4%</div>
-          <div class="team-record">W% .200</div>
+          <div class="team-name" style="color:var(--red);font-size:12px">PLAYOFF 5%</div>
+          <div class="team-record">W% .273</div>
         </div>
       </div>
       <div class="matchup-footer">
-        <span style="color:var(--red);font-size:10px;font-weight:700;letter-spacing:1px">2-8. La mafia perdió el control.</span>
-        <span class="diff-tag">STRK: L1</span>
+        <span class="winner-tag">🤯 2172 pts — el último de la liga dio el golpe de la semana</span>
+        <span class="diff-tag">STRK: W1</span>
       </div>
     </div>
 
@@ -957,191 +971,191 @@
 
 <!-- POWER RANKINGS -->
 <div class="rankings-section" id="rankings">
-  <p class="section-label">Power Rankings — Semana 11 · Ambas Ligas</p>
-  <table class="rankings-table">
+  <p class="section-label">Power Rankings — Semana 12 · Ambas Ligas</p>
+  <div class="rankings-table-wrap"><table class="rankings-table">
     <tbody>
       <tr>
         <td><span class="rank-num top3">01</span></td>
-        <td><span class="rank-move move-same">—</span></td>
+        <td><span class="rank-move move-up">↑1</span></td>
         <td>
-          <div class="rank-manager">Road to the Tit...</div>
-          <div class="rank-comment">Elquin Mo · Liga Nacional — "8-2 y líder indiscutible. Nadie lo ha bajado del trono. El speech del campeonato ya lo tiene ensayado."</div>
+          <div class="rank-manager">Chandu</div>
+          <div class="rank-comment">M. Gutiérrez · Liga Nacional — "20,809 PF acumulado, el más alto entre los líderes. 2117 puntos esta semana, el más alto de toda la liga. El callado sigue subiendo en silencio mientras todos se gritan en el WhatsApp."</div>
         </td>
-        <td><span class="rank-record">8-2-0</span></td>
-        <td><span class="rank-pts">19,283 PF</span></td>
+        <td><span class="rank-record">8-3-0</span></td>
+        <td><span class="rank-pts">20,809 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num top3">02</span></td>
-        <td><span class="rank-move move-same">—</span></td>
+        <td><span class="rank-move move-down">↓1</span></td>
         <td>
-          <div class="rank-manager">Baby Lions</div>
-          <div class="rank-comment">Jesus "El Dictador" Pozo · Liga Americana — "Líder de su división con 7-3 y más PF de la Liga Americana. Sólido por arriba y por abajo."</div>
+          <div class="rank-manager">Road to the Tit...</div>
+          <div class="rank-comment">Elquin Mo · Liga Nacional — "Perdió contra Los pichones pero el trono sigue siendo suyo. 8-3 con 21,506 PF acumulado. Una derrota no tumba lo que ha construido toda la temporada."</div>
         </td>
-        <td><span class="rank-record">7-3-0</span></td>
-        <td><span class="rank-pts">20,094 PF</span></td>
+        <td><span class="rank-record">8-3-0</span></td>
+        <td><span class="rank-pts">21,506 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num top3">03</span></td>
         <td><span class="rank-move move-same">—</span></td>
         <td>
           <div class="rank-manager">Hermagoras</div>
-          <div class="rank-comment">H. Homez · Liga Nacional — "W4 consecutivas. No habla mucho en el grupo pero su récord habla por él. Peligroso."</div>
+          <div class="rank-comment">H. Homez · Liga Nacional — "Se le rompió la racha W4 contra Locos y Hambrientos. Sigue 3ro con 20,352 PF acumulado. Peligroso, pero ya no es invencible."</div>
         </td>
-        <td><span class="rank-record">7-3-0</span></td>
-        <td><span class="rank-pts">19,077 PF</span></td>
+        <td><span class="rank-record">7-4-0</span></td>
+        <td><span class="rank-pts">20,352 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">04</span></td>
         <td><span class="rank-move move-same">—</span></td>
         <td>
-          <div class="rank-manager">Chandu</div>
-          <div class="rank-comment">M. Gutiérrez · Liga Nacional — "7-3 y W3. El callado que puede sorprender a todos en playoffs. Hay que tenerle respeto."</div>
+          <div class="rank-manager">Baby Lions</div>
+          <div class="rank-comment">Jesus "El Dictador" Pozo · Liga Americana — "Perdió contra Otaku's y solo hizo 798 puntos esta semana — su peor actuación del año. Aun así sigue con 21,503 PF acumulado, el más alto de su división."</div>
         </td>
-        <td><span class="rank-record">7-3-0</span></td>
-        <td><span class="rank-pts">18,442 PF</span></td>
+        <td><span class="rank-record">7-4-0</span></td>
+        <td><span class="rank-pts">21,503 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">05</span></td>
-        <td><span class="rank-move move-up">↑3</span></td>
+        <td><span class="rank-move move-up">↑2</span></td>
         <td>
-          <div class="rank-manager">Mambas Leon Out</div>
-          <div class="rank-comment">S. Casilla · Liga Americana — "2do en su división con 6-4 y le va mejor que a Otaku's dentro de la Liga Americana. Consistentes. Suben en este ranking."</div>
+          <div class="rank-manager">Team Otaku's</div>
+          <div class="rank-comment">A. Quintero · Liga Americana — "Le ganó a Pozo y se llevó el liderato de la división. No sabemos cómo lo hace con los regalos que le ha hecho a Emir, pero el récord no miente. Sube fuerte."</div>
         </td>
-        <td><span class="rank-record">6-4-0</span></td>
-        <td><span class="rank-pts">18,719 PF</span></td>
+        <td><span class="rank-record">7-4-0</span></td>
+        <td><span class="rank-pts">19,860 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">06</span></td>
-        <td><span class="rank-move move-up">↑2</span></td>
+        <td><span class="rank-move move-up">↑3</span></td>
         <td>
-          <div class="rank-manager">Inashiro Gakko</div>
-          <div class="rank-comment">Emir Sayago · Liga Nacional — "6-4 y sólido. Playoff % del 75% lo mantiene bien posicionado. Hace las cosas sin ruido y los resultados lo respaldan."</div>
+          <div class="rank-manager">Hasbulla Magomedov</div>
+          <div class="rank-comment">Luis Pirela · Liga Nacional — "22,182 PF acumulado, el más alto de TODA la Liga Nacional. Ganó aplastando a Team n*gg@ con 1924 puntos esta semana. El equipo está despertando justo a tiempo."</div>
         </td>
-        <td><span class="rank-record">6-4-0</span></td>
-        <td><span class="rank-pts">19,772 PF</span></td>
+        <td><span class="rank-record">6-5-0</span></td>
+        <td><span class="rank-pts">22,182 PF ⚡</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">07</span></td>
-        <td><span class="rank-move move-up">↑1</span></td>
+        <td><span class="rank-move move-down">↓1</span></td>
         <td>
-          <div class="rank-manager">Team Otaku's</div>
-          <div class="rank-comment">A. Quintero · Liga Americana — "No sabemos cómo está en esta posición con los regalos que le ha hecho a Emir, pero se mantiene con buen récord. En esta liga donde se tradea fuerte, Quintero sabe moverse. Suben."</div>
+          <div class="rank-manager">Los pichones</div>
+          <div class="rank-comment">M. Ramirez · Liga Americana — "21,922 PF acumulado, sólido pero por debajo de Pirela. Le ganaron al líder de la Nacional esta semana con 2166 puntos. El equipo que nadie veía venir empieza a importar de verdad."</div>
         </td>
-        <td><span class="rank-record">6-4-0</span></td>
-        <td><span class="rank-pts">18,229 PF</span></td>
+        <td><span class="rank-record">6-5-0</span></td>
+        <td><span class="rank-pts">21,922 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">08</span></td>
-        <td><span class="rank-move move-same">—</span></td>
+        <td><span class="rank-move move-down">↓2</span></td>
         <td>
-          <div class="rank-manager">Hasbulla Magomedov</div>
-          <div class="rank-comment">Luis Pirela · Liga Nacional — "El PF más alto de toda su división con 19,834. Tiene los mejores jugadores pero el calendario no le ha dado tregua. 5-5 no refleja lo que este equipo realmente vale."</div>
+          <div class="rank-manager">Inashiro Gakko</div>
+          <div class="rank-comment">Emir Sayago · Liga Nacional — "21,764 PF acumulado, segundo más alto de su división. L1 esta semana, pierde un poco de terreno pero sigue siendo competitivo."</div>
         </td>
-        <td><span class="rank-record">5-5-0</span></td>
-        <td><span class="rank-pts">19,834 PF</span></td>
+        <td><span class="rank-record">6-5-0</span></td>
+        <td><span class="rank-pts">21,764 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">09</span></td>
-        <td><span class="rank-move move-same">—</span></td>
+        <td><span class="rank-move move-up">↑2</span></td>
         <td>
-          <div class="rank-manager">Los pichones</div>
-          <div class="rank-comment">M. Ramirez · Liga Americana — "4to en su división con 5-5 pero con buen PF. Puede escalar si mantiene el roster limpio sin trades que lo hundan — y si tradea, que sea con más personas del fantasy que no sean sus únicos dos amigos."</div>
+          <div class="rank-manager">Risk Reward Shi...</div>
+          <div class="rank-comment">A. Martinez · Liga Americana — "21,843 PF acumulado, muy cerca del top de su división. Por fin rompió la racha L3 ganándole a Team Rida. Respiro de alivio."</div>
         </td>
-        <td><span class="rank-record">5-5-0</span></td>
-        <td><span class="rank-pts">19,548 PF</span></td>
+        <td><span class="rank-record">5-6-0</span></td>
+        <td><span class="rank-pts">21,843 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">10</span></td>
-        <td><span class="rank-move move-same">—</span></td>
+        <td><span class="rank-move move-down">↓3</span></td>
         <td>
           <div class="rank-manager">Team Boli</div>
-          <div class="rank-comment">Nelson Lozano · Liga Nacional — "5-5 con W1. En una liga de trades, si Boli se mueve bien puede subir. Y si su primo termina de hundirse del todo, sabemos que le terminará dando el resto del equipo — y así es como puede subir de verdad."</div>
+          <div class="rank-comment">Nelson Lozano · Liga Nacional — "21,130 PF acumulado. El trade de último momento dio frutos exactamente como esperábamos. Boli se movió bien y aseguró la victoria."</div>
         </td>
-        <td><span class="rank-record">5-5-0</span></td>
-        <td><span class="rank-pts">19,373 PF</span></td>
+        <td><span class="rank-record">6-5-0</span></td>
+        <td><span class="rank-pts">21,130 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">11</span></td>
-        <td><span class="rank-move move-down">↓6</span></td>
+        <td><span class="rank-move move-up">↑1</span></td>
         <td>
-          <div class="rank-manager">Los Peloteros</div>
-          <div class="rank-comment">Juan Andrés · Liga Americana — "Tenían el mejor PF de toda la liga, pero los trades de esta temporada les destruyeron el roster. Ya no son el mismo equipo temible del arranque. Bajan fuerte."</div>
+          <div class="rank-manager">Locos y Hambre...</div>
+          <div class="rank-comment">E. Rosas & N. Chávez · Liga Nacional — "20,670 PF acumulado. Le cortaron la racha W4 a Hermagoras. Para ser un equipo que no se pone de acuerdo en nada, esta semana funcionó perfecto."</div>
         </td>
-        <td><span class="rank-record">4-6-0</span></td>
-        <td><span class="rank-pts">20,185 PF</span></td>
+        <td><span class="rank-record">6-5-0</span></td>
+        <td><span class="rank-pts">20,670 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">12</span></td>
         <td><span class="rank-move move-down">↓1</span></td>
         <td>
-          <div class="rank-manager">Risk Reward Shi...</div>
-          <div class="rank-comment">A. Martinez · Liga Americana — "L3 consecutivas. El nombre era una advertencia que nadie tomó en serio. El riesgo salió mal."</div>
+          <div class="rank-manager">Mambas Leon Out</div>
+          <div class="rank-comment">S. Casilla · Liga Americana — "20,353 PF acumulado, el más bajo entre los equipos de 6-5. Perdió contra Team IL Capitano esta semana. El margen para errores se está acabando."</div>
         </td>
-        <td><span class="rank-record">4-6-0</span></td>
-        <td><span class="rank-pts">19,452 PF</span></td>
+        <td><span class="rank-record">6-5-0</span></td>
+        <td><span class="rank-pts">20,353 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">13</span></td>
-        <td><span class="rank-move move-same">—</span></td>
+        <td><span class="rank-move move-up">↑1</span></td>
         <td>
-          <div class="rank-manager">Locos y Hambre...</div>
-          <div class="rank-comment">E. Rosas & N. Chávez · Liga Nacional — "5-5 pero en caída con L2. El playoff se aleja. El día que estos dos se pongan de acuerdo para realizar un trade, quizás les vaya mejor. Hasta entonces, se quedan viendo."</div>
+          <div class="rank-manager">Team IL Capitano</div>
+          <div class="rank-comment">C. Shihai · Liga Americana — "20,404 PF acumulado. Le ganó a Mambas Leon Out y cortó su propia racha negativa. El nombre seguirá siendo profético, pero esta semana al menos ganó."</div>
         </td>
-        <td><span class="rank-record">5-5-0</span></td>
-        <td><span class="rank-pts">18,312 PF</span></td>
+        <td><span class="rank-record">5-6-0</span></td>
+        <td><span class="rank-pts">20,404 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">14</span></td>
-        <td><span class="rank-move move-down">↓1</span></td>
+        <td><span class="rank-move move-same">—</span></td>
         <td>
-          <div class="rank-manager">Team IL Capitano</div>
-          <div class="rank-comment">C. Shihai · Liga Americana — "4-6 y L2. El IL los tiene a ellos también. Nombre profético."</div>
+          <div class="rank-manager">Los Peloteros</div>
+          <div class="rank-comment">Juan Andrés · Liga Americana — "22,513 PF acumulado — el más alto de TODA la liga, sin excepción. Y aun así, 4-7. Perdió contra Call of Mafia esta semana. Los trades que destruyeron este roster siguen pasando factura, pero los números de fondo siguen siendo de un equipo top."</div>
         </td>
-        <td><span class="rank-record">4-6-0</span></td>
-        <td><span class="rank-pts">18,489 PF</span></td>
+        <td><span class="rank-record">4-7-0</span></td>
+        <td><span class="rank-pts">22,513 PF ⚡</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">15</span></td>
         <td><span class="rank-move move-same">—</span></td>
         <td>
-          <div class="rank-manager">South Park LLB</div>
-          <div class="rank-comment">Pedro García · Liga Nacional — "L4 seguidas. Stan y Kyle tampoco ganan en el fantasy. El roster necesita una cirugía urgente."</div>
+          <div class="rank-manager">Team n*gg@</div>
+          <div class="rank-comment">A. Montero · Liga Nacional — "19,423 PF acumulado. Aplastado por Pirela esta semana. El hilo de esperanza sigue ahí pero cada semana se hace más delgado."</div>
         </td>
-        <td><span class="rank-record">3-7-0</span></td>
-        <td><span class="rank-pts">17,477 PF</span></td>
+        <td><span class="rank-record">3-8-0</span></td>
+        <td><span class="rank-pts">19,423 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num">16</span></td>
-        <td><span class="rank-move move-same">—</span></td>
+        <td><span class="rank-move move-up">↑1</span></td>
         <td>
-          <div class="rank-manager">Team n*gg@</div>
-          <div class="rank-comment">A. Montero · Liga Nacional — "3-7 pero con W1 esta semana. ¿Resurrección? Si se mueven bien todavía hay un hilo de esperanza — muy delgado. Y si ese hilo se rompe, ya sabemos con qué jugadores terminará... los del primo del Boli."</div>
+          <div class="rank-manager">Call of Mafia</div>
+          <div class="rank-comment">Diego Perdomo · Liga Americana — "20,068 PF acumulado. 2172 puntos esta semana, el más alto de TODA la liga. El batacazo de la Semana 12 es real — pero con récord de 3-8, el camino para escalar sigue siendo largo. Una buena semana no borra una mala temporada."</div>
         </td>
-        <td><span class="rank-record">3-7-0</span></td>
-        <td><span class="rank-pts">17,783 PF</span></td>
+        <td><span class="rank-record">3-8-0</span></td>
+        <td><span class="rank-pts">20,068 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num bottom">17</span></td>
-        <td><span class="rank-move move-same">—</span></td>
+        <td><span class="rank-move move-down">↓1</span></td>
         <td>
-          <div class="rank-manager">Team Rida</div>
-          <div class="rank-comment">E. Chacin · Liga Americana — "3-7 y el menor PF de toda la liga. A pesar de que Dunkeros les devolvió el aire con su resumen semanal, aún no terminan de arrancar del todo. El silencio sigue siendo ensordecedor."</div>
+          <div class="rank-manager">South Park LLB</div>
+          <div class="rank-comment">Pedro García · Liga Nacional — "19,432 PF acumulado. L5 seguidas ahora. Perdió contra Chandu en la mejor semana de Chandu — pésimo momento para enfrentarlo."</div>
         </td>
-        <td><span class="rank-record">3-7-0</span></td>
-        <td><span class="rank-pts">16,119 PF 💀</span></td>
+        <td><span class="rank-record">3-8-0</span></td>
+        <td><span class="rank-pts">19,432 PF</span></td>
       </tr>
       <tr>
         <td><span class="rank-num bottom">18</span></td>
         <td><span class="rank-move move-down">↓1</span></td>
         <td>
-          <div class="rank-manager">Call of Mafia</div>
-          <div class="rank-comment">Diego Perdomo · Liga Americana — "2-8. El único equipo con ese récord en toda la liga. El fondo del pozo. Pirela ya pidió que lo eliminen de la faz de la tierra y el ranking le da la razón."</div>
+          <div class="rank-manager">Team Rida</div>
+          <div class="rank-comment">E. Chacin · Liga Americana — "17,965 PF acumulado, el más bajo de toda la liga. Se le cortó la racha W2 contra Risk Reward Shinobi. A pesar de que Dunkeros les devolvió el aire con su resumen semanal, aún no terminan de arrancar del todo."</div>
         </td>
-        <td><span class="rank-record">2-8-0</span></td>
-        <td><span class="rank-pts">17,686 PF 🪦</span></td>
+        <td><span class="rank-record">3-8-0</span></td>
+        <td><span class="rank-pts">17,965 PF 💀</span></td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 </div>
 
 <!-- NOTICIAS -->
@@ -1152,28 +1166,56 @@
   <div class="news-grid">
     <div class="news-main">
       <span class="news-tag tag-lesion">🎭 Drama del Vestuario</span>
-      <h2 class="news-headline">Soto y Lindor: los Mets tienen dos estrellas que nunca fueron amigos</h2>
+      <h2 class="news-headline">Los Giants ya no disimulan: están vendiendo, y Arraez es el primero en la lista</h2>
       <p class="news-body">
-        El drama más grande de la temporada no está en el campo — está en el vestuario de los Mets. Lindor y Soto nunca conectaron desde el día uno. La historia dice que Soto amaba a Aaron Judge en los Yankees, y cuando llegó a Nueva York esperaba ese mismo vínculo con Lindor. Nunca pasó. Según reportes, <em>esencialmente nunca se hablaban</em> fuera del juego.
+        El equipo que hace un año sorprendió a todos al traer a Rafael Devers desde Boston ahora está en modo demolición total. Con un récord de 29-43 — el segundo peor de toda la MLB, solo por encima de los Rockies — los Giants finalmente dejaron de fingir que compiten.
         <br><br>
-        Ahora los Mets están <strong style="color:var(--red)">29-37</strong>, Lindor lleva semanas en el IL con una lesión en el tobillo, y un insider de la MLB ya dijo abiertamente: <strong style="color:var(--red)">"No me sorprendería ver a Lindor en el mercado de cambios."</strong> Si el trade ocurre, sería la bomba del deadline de agosto.
+        Aunque el front office todavía no lo admite oficialmente, fuentes confirman que San Francisco se está moviendo claramente hacia vender. <strong style="color:var(--red)">Luis Arraez ya tiene varios equipos interesados en llevárselo</strong> — el mismo Arraez que viene defendiendo su cuarto título de bateo consecutivo. Imagínense ganar el título de bateo con la camiseta de otro equipo a mitad de temporada.
       </p>
     </div>
     <div class="news-sidebar">
       <div class="news-small">
-        <span class="news-tag tag-lesion">🔴 HOY — BOMBA</span>
-        <div class="news-small-headline">Ronald Acuña Jr. al IL — hamstring izquierdo, segunda vez en la temporada</div>
-        <div class="news-small-body">Confirmado hoy miércoles 10 de junio. Los Braves lo metieron al IL de 10 días con el hamstring izquierdo distendido — la misma lesión de mayo. Acuña dijo "no siento dolor, solo tensión" así que no parece tan grave. Activaron a Rowdy Tellez. Fantasy: IL ya y busca reemplazo esta semana.</div>
+        <span class="news-tag tag-lesion">🔴 ESTA SEMANA</span>
+        <div class="news-small-headline">Spencer Strider al IL — fuera al menos un mes</div>
+        <div class="news-small-body">Los Braves confirmaron que Strider sufrió una inflamación en el codo y será reevaluado en cuatro semanas mínimo. Atlanta, que ya viaja sin Acuña, ahora también pierde a uno de sus brazos más importantes. Fantasy: si lo tienes, busca reemplazo ya — no hay fecha clara de regreso.</div>
       </div>
       <div class="news-small">
         <span class="news-tag tag-lesion">🔴 Bomba</span>
-        <div class="news-small-headline">Aaron Judge al IL — fuera hasta julio/agosto — retorno posible agosto o septiembre</div>
-        <div class="news-small-body">Fractura por estrés en la primera costilla derecha. Yankees (37-21) lo extrañan. Re-evaluación en 4-6 semanas. Si lo tienes, activa el IL ahora mismo.</div>
+        <div class="news-small-headline">Corey Seager — IL por conmoción cerebral, tercer juego consecutivo afuera</div>
+        <div class="news-small-body">Chocó en home con el catcher de los Royals, se quedó en el juego y conectó jonrón — pero los síntomas no pararon. Rangers lo pusieron en IL de 7 días por conmoción. Regreso estimado para el 22 de junio. Nicky Lopez toma su lugar en SS.</div>
       </div>
       <div class="news-small">
-        <span class="news-tag tag-waiver">🟢 Regresa el mejor</span>
-        <div class="news-small-headline">Tarik Skubal vuelve este fin de semana</div>
-        <div class="news-small-body">El Cy Young defensor regresa del IL. Lanzó bullpen session esta semana. Si lo tienes stasheado, prepárate para activarlo.</div>
+        <span class="news-tag tag-waiver">🟢 Sigue de racha</span>
+        <div class="news-small-headline">Tarik Skubal de vuelta dominando</div>
+        <div class="news-small-body">El Cy Young defensor está de regreso en la rotación de los Tigers. Si lo tienes, ya debería estar en tu lineup activo.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MVP RACE -->
+  <div style="margin-top:2px;">
+    <p class="section-label" style="margin-top:24px;">🏆 La Carrera al MVP — Todo Cambió con la Lesión de Judge</p>
+    <div class="news-grid">
+      <div class="news-main">
+        <span class="news-tag tag-waiver">⚡ Nuevo líder AL</span>
+        <h2 class="news-headline">Yordan Álvarez le quita el trono a Bobby Witt Jr. — y ya está rumbo al Triple Crown</h2>
+        <p class="news-body">
+          Con Judge fuera de la jugada tras su lesión en la costilla, el MVP de la Americana quedó completamente abierto. El que se montó en el trono fue Yordan Álvarez, quien lidera toda la MLB con un OPS de 1.080 — el mejor de cualquier bateador en las Grandes Ligas. Sus números de OBP y slugging también son los más altos del béisbol.
+          <br><br>
+          Bobby Witt Jr. sigue peleando de cerca, pero las casas de apuestas ya cambiaron el favorito: <strong style="color:var(--green)">Álvarez +105, Witt +155, Ben Rice +350.</strong> Judge, que entró la temporada como -130, cayó hasta 100-1 tras su lesión.
+        </p>
+      </div>
+      <div class="news-sidebar">
+        <div class="news-small">
+          <span class="news-tag tag-general">🤖 NL — sin competencia</span>
+          <div class="news-small-headline">Ohtani a -1000 en las apuestas al MVP del NL</div>
+          <div class="news-small-body">Nadie le hace sombra. Kyle Schwarber es su competencia más cercana y está a +2000 — una diferencia abismal. Ohtani está jugando una temporada que se va a recordar por años.</div>
+        </div>
+        <div class="news-small">
+          <span class="news-tag tag-waiver">🆕 El novato que sorprendió</span>
+          <div class="news-small-headline">Bryce Eldridge hizo historia esta semana</div>
+          <div class="news-small-body">Se convirtió en el jugador más joven en la historia en conectar un grand slam de walk-off. En junio viene bateando un loco .413/.500/.674. De .158 a esto en cuestión de semanas.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1184,39 +1226,39 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;">
 
       <div class="news-small" style="background:var(--dark2);padding:22px;">
-        <span class="news-tag tag-waiver">🏆 40-20</span>
-        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Atlanta Braves — el mejor récord del béisbol y nadie habla de ellos</div>
-        <div class="news-small-body" style="margin-top:8px;">Lideran la MLB con 40-20 y están a +900 en las apuestas. Eso significa que todo el mundo sabe que son buenos pero nadie cree que van a ganar. Classic Atlanta. Están 9 juegos sobre los Phillies. Si esto fuera cualquier otro equipo, sería la historia del año.</div>
+        <span class="news-tag tag-waiver">🏆 46-25</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Atlanta Braves — perdiendo brazos pero Olson sigue cargando el equipo</div>
+        <div class="news-small-body" style="margin-top:8px;">Entre Acuña y ahora Strider, los Braves siguen perdiendo piezas clave. Pero Matt Olson sigue siendo una máquina — lidera la racha de bWAR del equipo con .261/.340/.543, 16 jonrones y 45 RBIs. La racha de juegos consecutivos más larga activa en la MLB. Atlanta sigue ganando a pesar de todo.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark2);padding:22px;">
-        <span class="news-tag tag-waiver">👑 37-21</span>
-        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Los Dodgers — van por el three-peat y el mundo los sigue</div>
-        <div class="news-small-body" style="margin-top:8px;">Campeones de las últimas dos Series Mundiales. Favoritos a +190. El 23% de todo el dinero de apuestas va para ellos. Con Judge lesionado en los Yankees, el camino se despejó. Ohtani con ERA 0.74 como pitcher. Shohei jugando béisbol de otro planeta.</div>
+        <span class="news-tag tag-general">😬 Sorpresa fea</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">NY Yankees — la rotación de Schlittler, Fried y Cole es la mejor de la MLB y nadie habla de eso</div>
+        <div class="news-small-body" style="margin-top:8px;">Con Judge fuera, todo el peso recae en el pitcheo. Y resulta que tienen el mejor trío de abridores del béisbol. Schlittler liderando el Cy Young, Fried y Cole completando el cuadro. Segundo lugar en el AL East pero jugando mejor que el líder Tampa Bay.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark2);padding:22px;">
-        <span class="news-tag tag-general">🤫 Líderes del AL</span>
-        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Tampa Bay Rays — ganan en silencio y nadie los respeta</div>
-        <div class="news-small-body" style="margin-top:8px;">Mejor récord de la Liga Americana y están en el puesto 22 en tickets de apuesta. Llevan años haciendo esto — ganar con presupuesto de Triple-A y roster de nadie. No tienen estrellas, tienen sistemas. Clásico modo Rays. Nunca los subestimen.</div>
+        <span class="news-tag tag-waiver">🔥 La sorpresa del año</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Chicago White Sox — de 22-44 el año pasado a buscar refuerzos este año</div>
+        <div class="news-small-body" style="margin-top:8px;">El equipo que el año pasado a estas alturas tenía 22-44 ahora va sobre .500 y su gerente general ya admitió que está "serio sobre reforzar el roster" antes del deadline. El reboot completo de Chicago está funcionando.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark2);padding:22px;">
-        <span class="news-tag tag-lesion">💸 29-37</span>
-        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">NY Mets — $500 millones de nómina para esto</div>
-        <div class="news-small-body" style="margin-top:8px;">El equipo más caro de la historia del béisbol va 14 juegos detrás de los Braves. Soto y Lindor no se hablan, Lindor está en el IL, y se rumorea que lo van a tradear. Están considerando ser vendedores en junio. En junio. Con esa nómina. Brillante.</div>
+        <span class="news-tag tag-lesion">💸 29-43</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">San Francisco Giants — oficialmente en modo demolición</div>
+        <div class="news-small-body" style="margin-top:8px;">Segundo peor récord de la MLB, solo por encima de los Rockies. Arraez, Webb y Ray todos en el mercado de trades. Un año después de la sorpresa de Devers, los Giants ya tiraron la toalla por 2026.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark2);padding:22px;">
-        <span class="news-tag tag-waiver">📈 Dark horse</span>
-        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Milwaukee Brewers — el equipo que siempre aparece</div>
-        <div class="news-small-body" style="margin-top:8px;">A +1700 en apuestas pero con el NL Central más competitivo en años — cinco equipos peleando el primer lugar. Los Brewers son el equipo que nadie menciona en octubre y siempre están ahí. La mejor apuesta de valor del mercado si quieren tirar unos dólares.</div>
+        <span class="news-tag tag-waiver">📈 Sigue sorprendiendo</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">St. Louis Cardinals — el equipo joven que nadie vio venir</div>
+        <div class="news-small-body" style="margin-top:8px;">Con una racha de 4 victorias seguidas, los Cardinals jóvenes siguen superando expectativas. Jordan Walker reinventándose por completo. Aun así, planean vender a JoJo Romero y Dustin May en el deadline — construyendo para el futuro sin sacrificar el presente.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark2);padding:22px;">
         <span class="news-tag tag-general">💣 Bomba de agosto</span>
-        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Skubal al mercado — y los Dodgers ya están al teléfono</div>
-        <div class="news-small-body" style="margin-top:8px;">Si Skubal regresa saludable y los Tigers siguen perdiendo, lo tradean antes del 3 de agosto. Los Dodgers son el destino más mencionado. Imagínate a Skubal + Ohtani en la misma rotación. El béisbol no estaría listo para eso.</div>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">El mercado de pitchers está hirviendo — Skubal, Peralta y Chapman en la mira</div>
+        <div class="news-small-body" style="margin-top:8px;">Tarik Skubal sigue siendo el nombre #1 en rumores. Freddy Peralta de los Mets también apareció en conversaciones — apenas meses después de que los Mets lo adquirieran. Y Aroldis Chapman de los Red Sox podría unirse a su octavo equipo diferente. El deadline de agosto va a estar caliente.</div>
       </div>
 
     </div>
@@ -1227,26 +1269,26 @@
     <p class="section-label" style="margin-top:24px;">🏅 Premios Individuales & Carreras Estadísticas 2026</p>
     <div class="news-grid">
       <div class="news-main">
-        <span class="news-tag tag-waiver">🔥 Rivalidad del año</span>
-        <h2 class="news-headline">Arraez vs Otto Lopez — ¿Puede el dominicano robarle el título al monstruo del contacto?</h2>
+        <span class="news-tag tag-waiver">🔥 Carrera del Cy Young NL</span>
+        <h2 class="news-headline">Misiorowski vs Sánchez: el duelo más histórico que tiene la MLB en años</h2>
         <p class="news-body">
-          Luis Arraez lleva 3 títulos de bateo consecutivos con 3 equipos distintos — Twins, Marlins y Padres — algo que nunca se había visto en la historia del béisbol. Ahora con los Giants busca el 4to, y su tasa de contacto de 94.7% lleva 4 años siendo la mejor de la MLB. Parecía imposible detenerlo.
+          Cristopher Sánchez tuvo un mayo que parece sacado de un videojuego en modo fácil: <strong style="color:var(--green)">0.00 de ERA, récord de 4-0 y 45 ponches en 39 innings</strong> sin permitir UNA SOLA carrera limpia. Rompió el récord de innings consecutivos sin anotación del propio equipo de los Phillies. Va con récord de 6-2 y ERA de 1.47 en la temporada.
           <br><br>
-          Pero Otto Lopez de los Marlins está armando tremenda pelea. El dominicano-canadiense viene bateando <strong style="color:var(--green)">.342 de average con 10 rachas de múltiples hits en mayo</strong> — llegó a liderar la MLB en promedio y en junio sigue ardiendo con .330+. En mayo bateó .384 (28-for-73). No está jugando, está <em>destruyendo</em>.
+          El problema para Sánchez es que del otro lado está Jacob Misiorowski, que está rompiendo la métrica SIERA — la segunda mejor marca desde 2016. <strong style="color:var(--green)">Misiorowski lidera la MLB en ponches (116) y tiene el ERA más bajo de toda la liga (1.50).</strong> Lanza tan duro que en su última salida llegó a 100+ mph 57 veces — 10 más que cualquier otro pitcher en la era de pitch-tracking.
           <br><br>
-          <strong style="color:var(--green);">La pregunta es:</strong> ¿Puede un jugador sin el historial de Arraez mantener ese ritmo toda la temporada? Los que tienen a Otto Lopez en sus rosters están rezando que sí.
+          <strong style="color:var(--green);">El dato loco:</strong> Si la temporada terminara hoy, ni Ohtani con su ERA de 0.74 estaría en la conversación del Cy Young. Eso es lo bueno que están siendo estos dos.
         </p>
       </div>
       <div class="news-sidebar">
         <div class="news-small">
           <span class="news-tag tag-general">🥇 Cy Young AL</span>
-          <div class="news-small-headline">Cam Schlittler (Yankees) — 7-2, ERA 1.50, 81 K en 12 aperturas</div>
-          <div class="news-small-body">Con Skubal en el IL, el joven de los Yankees tomó el mando. El 2do ERA más bajo en la historia de un Yankee en sus primeros 12 aperturas. Era desconocido en abril — ahora es favorito.</div>
+          <div class="news-small-headline">Cam Schlittler (Yankees) — ERA de 1.50, el mejor del equipo en su historia</div>
+          <div class="news-small-body">Con Skubal lesionado, Schlittler tomó el mando del AL Cy Young. Lanza fastball el 90.8% del tiempo — algo nunca antes visto en un pitcher de élite — y aun así nadie lo puede descifrar.</div>
         </div>
         <div class="news-small">
-          <span class="news-tag tag-general">🏆 Cy Young NL</span>
-          <div class="news-small-headline">Cristopher Sánchez (Phillies) — 7-2, ERA 1.46, 103 K</div>
-          <div class="news-small-body">El zurdo de Filadelfia lidera la carrera del NL. Paul Skenes va 6-4 con ERA 3.00 — sigue en carrera pero ya no es el favorito. Y Ohtani tiene ERA 0.74 pero no califica todavía por innings.</div>
+          <span class="news-tag tag-general">⚾ El veterano que no envejece</span>
+          <div class="news-small-headline">Chris Sale (Braves) — 37 años, ERA de 1.89, sigue siendo letal</div>
+          <div class="news-small-body">A los 37, Sale sigue dominando con el mismo slider que lo hizo elite hace una década. Empatado en el liderato de victorias de la MLB con 7. La edad es solo un número para él.</div>
         </div>
       </div>
     </div>
@@ -1256,70 +1298,70 @@
 
       <div class="news-small" style="background:var(--dark2);padding:22px;">
         <span class="news-tag tag-waiver">💣 HR líder</span>
-        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Kyle Schwarber — 23 HR, en pace de 66 en la temporada</div>
-        <div class="news-small-body" style="margin-top:8px;">El año pasado pegó 56. Ahora va en pace de 66 — lo que empataría con Sosa como el 3er total más alto en la historia. A los 33 años, está envejeciendo como vino francés.</div>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Kyle Schwarber — 24 HR, empatado en el liderato de la MLB</div>
+        <div class="news-small-body" style="margin-top:8px;">El año pasado pegó 56 en toda la temporada. Este año va a un ritmo que podría superarlo fácilmente. A los 33 años, sigue siendo el bate más temido de la Liga Nacional.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark2);padding:22px;">
-        <span class="news-tag tag-general">🔥 MVP AL</span>
-        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Bobby Witt Jr. — nuevo favorito tras caída de Judge</div>
-        <div class="news-small-body" style="margin-top:8px;">Con Judge en el IL, Witt Jr. lidera la carrera al MVP del AL. El mejor SS de la liga los últimos 2 años. Poder, velocidad y promedio — el paquete completo que Judge ya no puede ofrecer ahora mismo.</div>
+        <span class="news-tag tag-general">🔥 Rivalidad de bateo</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Otto Lopez le sigue los pasos a Arraez por el liderato de hits</div>
+        <div class="news-small-body" style="margin-top:8px;">Lopez y Arraez son top 2 en hits de toda la MLB esta temporada. La pelea por el título de bateo sigue encendida — y con los Giants posiblemente vendiendo a Arraez, todo puede cambiar antes de agosto.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark2);padding:22px;">
-        <span class="news-tag tag-general">🤖 Ohtani — dos premios posibles</span>
-        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">ERA 0.74 como pitcher + monstruo al bate</div>
-        <div class="news-small-body" style="margin-top:8px;">No califica oficialmente todavía por innings, pero sus números como pitcher son absurdos. Al bate sigue siendo Ohtani. Si llega a clasificar como pitcher, puede pelear dos premios individuales al mismo tiempo.</div>
+        <span class="news-tag tag-general">🤖 Ohtani — la mejor versión de su carrera</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">ERA de 1.06, WHIP de 0.84, bateando .305</div>
+        <div class="news-small-body" style="margin-top:8px;">Su mejor ERA de carrera es 2.33 — este año puede romperlo con facilidad. Sigue sin calificar oficialmente para el Cy Young por innings, pero estadísticamente está jugando el mejor béisbol de su vida.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark2);padding:22px;">
-        <span class="news-tag tag-waiver">🆕 Phenom</span>
-        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Jacob Misiorowski (Brewers) — el pitcher que nadie pronuncia bien</div>
-        <div class="news-small-body" style="margin-top:8px;">Nadie lo conocía en abril. Ahora está en la carrera al Cy Young del NL. Los Brewers tienen una joya y el béisbol apenas está aprendiendo su nombre.</div>
+        <span class="news-tag tag-waiver">🆕 El breakout del año</span>
+        <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Jordan Walker (Cardinals) — de .201 a .298 de la nada</div>
+        <div class="news-small-body" style="margin-top:8px;">Después de dos temporadas mediocres, Walker se reinventó completamente. A los 24 años está teniendo el breakout que todos esperaban hace dos años. San Luis lo necesitaba.</div>
       </div>
 
     </div>
   </div>
 
-  <!-- FILA 4: TOP FANTASY SEMANA 11 -->
+  <!-- FILA 4: TOP FANTASY SEMANA 12 -->
   <div style="margin-top:2px;">
     <p class="section-label" style="margin-top:24px;">⚡ Top Fantasy — Los que están ardiendo esta semana</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px;">
 
       <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--green);">
-        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--green);letter-spacing:2px;margin-bottom:8px;">🥇 INTOCABLE</div>
-        <div class="news-small-headline" style="font-size:15px;">Jung Hoo Lee (Giants)</div>
-        <div class="news-small-body" style="margin-top:6px;">Lleva semanas bateando como si el béisbol fuera un videojuego en modo fácil. Ha sido el bateador más consistente de los Giants y uno de los más calientes de toda la liga. Si lo tienes, agradece. Si no lo tienes, llora.</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--green);letter-spacing:2px;margin-bottom:8px;">🥇 ROMPIENDO HISTORIA</div>
+        <div class="news-small-headline" style="font-size:15px;">Bryce Eldridge (Giants)</div>
+        <div class="news-small-body" style="margin-top:6px;">Bateando .413/.500/.674 en junio. El grand slam de walk-off más joven en la historia ya quedó atrás — ahora solo viene a destruir pitchers todos los días. Si está disponible, es robo.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--green);">
-        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--green);letter-spacing:2px;margin-bottom:8px;">🔥 EL PERSEGUIDOR</div>
-        <div class="news-small-headline" style="font-size:15px;">Otto Lopez (Marlins)</div>
-        <div class="news-small-body" style="margin-top:6px;">Viene persiguiendo a Arraez por el título de bateo como si fuera una deuda personal. El dominicano-canadiense está en racha y no da señales de parar. En una liga que se está cayendo a pedazos como los Marlins, Lopez es la única razón para ver sus juegos.</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--green);letter-spacing:2px;margin-bottom:8px;">🔥 EL MVP SILENCIOSO</div>
+        <div class="news-small-headline" style="font-size:15px;">Yordan Alvarez (Astros)</div>
+        <div class="news-small-body" style="margin-top:6px;">OPS de 1.080, el mejor de toda la MLB. Está en camino a un Triple Crown mientras los Astros sufren. Si tienes a Alvarez, no importa lo mal que esté tu equipo — él te carga solo.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--green);">
-        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--green);letter-spacing:2px;margin-bottom:8px;">💣 EL GRANDULÓN</div>
-        <div class="news-small-headline" style="font-size:15px;">Brandon Marsh (Phillies)</div>
-        <div class="news-small-body" style="margin-top:6px;">Marsh viene pegando jonrones como si le debieran dinero. Juega en Filadelfia con una de las ofensivas más peligrosas de la Nacional — eso significa oportunidades, y Marsh las está aprovechando todas. Pónganle ojo.</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--green);letter-spacing:2px;margin-bottom:8px;">💣 EL REINVENTADO</div>
+        <div class="news-small-headline" style="font-size:15px;">Jordan Walker (Cardinals)</div>
+        <div class="news-small-body" style="margin-top:6px;">De .201 a .298 de la nada. A los 24 años finalmente está jugando como todos esperaban. Si lo tienes en tu liga desde hace tiempo, esta es tu recompensa.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--leather);">
-        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--leather);letter-spacing:2px;margin-bottom:8px;">⚾ EL REGRESADO</div>
-        <div class="news-small-headline" style="font-size:15px;">Troy Melton (Tigers)</div>
-        <div class="news-small-body" style="margin-top:6px;">Estuvo en el IL y cuando regresó, regresó con ganas. Detroit no tiene mucho de qué alegrarse esta temporada, pero Melton ha sido uno de los pocos motivos. Si está libre en tu liga, es una joya que nadie está viendo.</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--leather);letter-spacing:2px;margin-bottom:8px;">⚾ INTOCABLE</div>
+        <div class="news-small-headline" style="font-size:15px;">Jacob Misiorowski (Brewers)</div>
+        <div class="news-small-body" style="margin-top:6px;">Lidera la MLB en ponches y tiene el ERA más bajo de toda la liga. Si está disponible en tu liga, es emergencia absoluta agarrarlo ya mismo.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--leather);">
-        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--leather);letter-spacing:2px;margin-bottom:8px;">📈 DE VUELTA</div>
-        <div class="news-small-headline" style="font-size:15px;">Gleyber Torres (regresó del IL)</div>
-        <div class="news-small-body" style="margin-top:6px;">Torres es ese jugador que cuando está sano produce — y cuando se lesiona te pregunta por qué lo tienes. Ahorita está sano y produciendo. Aprovecha mientras dure, porque con Gleyber nunca sabes cuánto tiempo más.</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--leather);letter-spacing:2px;margin-bottom:8px;">⚠️ OJO — SE LESIONÓ</div>
+        <div class="news-small-headline" style="font-size:15px;">Gleyber Torres (Tigers)</div>
+        <div class="news-small-body" style="margin-top:6px;">Salió esta semana agarrándose el costado izquierdo — ya había tenido una distensión oblicua esta temporada. Si lo tienes, mantente atento a las noticias antes de poner el lineup.</div>
       </div>
 
       <div class="news-small" style="background:var(--dark3);padding:20px;border-left:3px solid var(--leather);">
         <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--leather);letter-spacing:2px;margin-bottom:8px;">💎 EL SILENCIOSO</div>
         <div class="news-small-headline" style="font-size:15px;">Nick Gonzales (Pirates)</div>
-        <div class="news-small-body" style="margin-top:6px;">No va a salir en ESPN, no va a tener un highlight viral, y nadie lo va a mencionar en el grupo de WhatsApp. Pero semana a semana da hits, da carreras y no falla. Es el tipo de jugador que gana fantasy en silencio mientras los demás pelean por Ohtani.</div>
+        <div class="news-small-body" style="margin-top:6px;">No va a salir en ESPN, no va a tener un highlight viral, y nadie lo va a mencionar en el grupo de WhatsApp. Pero semana a semana da hits y no falla. Gana fantasy en silencio.</div>
       </div>
 
     </div>
@@ -1328,30 +1370,28 @@
 
 <!-- NOVATOS -->
 <div class="news-section" id="novatos">
-  <p class="section-label">🌟 Novatos & Prospectos — Semana 11 · Lo más fresco</p>
+  <p class="section-label">🌟 Novatos & Prospectos — Semana 12 · Lo más fresco</p>
 
   <div class="news-grid">
     <div class="news-main">
-      <span class="news-tag tag-lesion">🔴 Bajado esta semana</span>
-      <h2 class="news-headline">Brayan Bello — de promesa a Triple-A en una semana</h2>
+      <span class="news-tag tag-waiver">🔥 El novato del momento</span>
+      <h2 class="news-headline">Bryce Eldridge hizo historia — el grand slam más joven de walk-off jamás visto</h2>
       <p class="news-body">
-        El dominicano de los Red Sox fue optado a Triple-A Worcester el 5 de junio después de permitir 8 carreras contra los Orioles. Bello terminó con ERA de 6.34 en 61 innings y un récord de 2-6. Lo más doloroso: en cuatro salidas como relevo había sido dominante con ERA de 0.71 en 25 innings — pero como abridor, fue un desastre.
+        Lo que empezó con un .158 de average y ponchándose cada tres turnos se convirtió en la mejor historia de junio. Eldridge conectó un walk-off grand slam y se convirtió en el jugador más joven en la historia en lograrlo. No fue casualidad — viene en una racha de jonrones de tres días y en junio batea un absurdo .413/.500/.674 en 13 juegos.
         <br><br>
-        Antes de que lo bajaran, Bello dijo en conferencia: <em>"Dejen de hablar de bullpen. Siempre he sido abridor."</em> Horas después lo optaron. El manager interino Chad Tracy dijo que fue una "decisión muy difícil."
-        <br><br>
-        <strong style="color:var(--red);">Fantasy impact: DROPPEA a Bello.</strong> No hay línea de tiempo clara para su regreso y Boston tiene sus problemas encima.
+        <strong style="color:var(--green);">Fantasy impact: si todavía está disponible en tu liga, es una emergencia.</strong> El bate más caliente de toda la MLB en este momento.
       </p>
     </div>
     <div class="news-sidebar">
       <div class="news-small">
-        <span class="news-tag tag-waiver">✅ Ya está arriba</span>
-        <div class="news-small-headline">Colt Emerson (Mariners) — debutó el 17 de mayo, 20 años</div>
-        <div class="news-small-body">Lo subieron de emergencia y se convirtió en el Mariner más joven en debutar desde Félix Hernández en 2005. Está ajustándose al béisbol de las mayores pero el talento es obvio. Dale tiempo — puede ser una pieza importante en lo que queda de temporada.</div>
+        <span class="news-tag tag-waiver">✅ Sigue adaptándose</span>
+        <div class="news-small-headline">Colt Emerson (Mariners) — el más joven desde Félix</div>
+        <div class="news-small-body">Sigue ganando experiencia en las mayores. El talento es obvio, solo necesita tiempo para que el ajuste se complete.</div>
       </div>
       <div class="news-small">
-        <span class="news-tag tag-general">📈 En llamas</span>
-        <div class="news-small-headline">Max Clark (Tigers) — .352 BA en Triple-A, ¿próximo llamado?</div>
-        <div class="news-small-body">Detroit perdió a Parker Meadows y Clark está quemando el Triple-A. Cuando un equipo tiene necesidad y el prospecto está así de caliente, el llamado es cuestión de tiempo. Nombre a stashear.</div>
+        <span class="news-tag tag-general">📈 Mirando hacia arriba</span>
+        <div class="news-small-headline">Max Clark (Tigers) — sigue quemando Triple-A</div>
+        <div class="news-small-body">Detroit sigue necesitando ayuda en el outfield. Clark sigue siendo el nombre a vigilar para el próximo llamado.</div>
       </div>
     </div>
   </div>
@@ -1360,34 +1400,27 @@
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;margin-top:2px;">
 
     <div class="news-small" style="background:var(--dark2);padding:22px;">
-      <span class="news-tag tag-waiver">🔥 Candidato ROY</span>
-      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Munetaka Murakami (White Sox) — lidera novatos en HR y OPS</div>
-      <div class="news-small-body" style="margin-top:8px;">Nadie lo quiso pagar bien en el offseason. Los White Sox lo agarraron barato. Ahora lidera los rookies en jonrones y tiene a toda la liga con la cara roja de vergüenza. El béisbol tiene una forma muy cruel de dar lecciones.</div>
+      <span class="news-tag tag-waiver">🔥 Líder de wRC+</span>
+      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Munetaka Murakami (White Sox) — sigue al tope con 156 wRC+</div>
+      <div class="news-small-body" style="margin-top:8px;">El japonés sigue liderando a todos los novatos calificados en wRC+. Eldridge viene cerrando la brecha con 148, y Colt Emerson tercero con 144. La carrera del ROY se está poniendo interesante.</div>
+    </div>
+
+    <div class="news-small" style="background:var(--dark2);padding:22px;">
+      <span class="news-tag tag-lesion">📉 Bajado</span>
+      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Brayan Bello — sigue en Triple-A sin fecha de regreso</div>
+      <div class="news-small-body" style="margin-top:8px;">El dominicano de los Red Sox sigue abajo desde principios de junio. No hay indicios de llamado pronto. Si lo tienes en tu roster, sigue siendo droppeable.</div>
     </div>
 
     <div class="news-small" style="background:var(--dark2);padding:22px;">
       <span class="news-tag tag-general">⚾ Extensión histórica</span>
-      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Konnor Griffin (Pirates) — $140M a los 19 años, ya estabilizado</div>
-      <div class="news-small-body" style="margin-top:8px;">Arrancó frío y las críticas llovieron. Pero Griffin tiene 20 años y ya se estabilizó. Los Pirates apostaron $140M por él — la apuesta más grande en su historia. Si funciona, son genios. Si no... bueno, son los Pirates. Ya están acostumbrados.</div>
+      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Konnor Griffin (Pirates) — ya estabilizado tras el arranque frío</div>
+      <div class="news-small-body" style="margin-top:8px;">Después de un inicio difícil, el novato de $140M sigue mejorando semana a semana. Los Pirates respiran tranquilos.</div>
     </div>
 
     <div class="news-small" style="background:var(--dark2);padding:22px;">
-      <span class="news-tag tag-waiver">🟢 Por llegar pronto</span>
-      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Ralphy Velazquez (?) — TOP prospecto de 1B destruyendo Triple-A</div>
-      <div class="news-small-body" style="margin-top:8px;">El prospecto #4 del béisbol podría subir directo a Oakland después del Juego de Estrellas. No corras, pero tampoco te duermas. Cuando suba, todos van a querer agarrarlo al mismo tiempo.</div>
-    </div>
-
-
-    <div class="news-small" style="background:var(--dark2);padding:22px;">
-      <span class="news-tag tag-waiver">📅 Julio llega</span>
-      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Leo De Vries (Athletics) — predicho para el All-Star break</div>
-      <div class="news-small-body" style="margin-top:8px;">El prospecto #4 del béisbol podría jugar el Futures Game y subir directo a Oakland después del break. Stasheenlo en dynasty si tienen el espacio — el potencial es de superstar.</div>
-    </div>
-
-    <div class="news-small" style="background:var(--dark2);padding:22px;">
-      <span class="news-tag tag-general">👀 Ojo en Giants</span>
-      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Bryce Eldridge (Giants) — el mejor prospecto de poder de la MLB</div>
-      <div class="news-small-body" style="margin-top:8px;">Los Giants no jonronean, no anotan, y ven el béisbol pasar. Eldridge es el prospecto de poder más temido del sistema y San Francisco lo necesita ya. El llamado podría venir antes de lo esperado.</div>
+      <span class="news-tag tag-waiver">📅 Sigue en la mira</span>
+      <div class="news-small-headline" style="font-size:16px;margin-top:8px;">Leo De Vries (Athletics) — predicho para después del All-Star</div>
+      <div class="news-small-body" style="margin-top:8px;">El prospecto #4 del béisbol sigue su camino hacia las mayores. Stasheenlo si tienen espacio — el potencial sigue siendo de superstar.</div>
     </div>
 
   </div>
@@ -1401,38 +1434,44 @@
 
   <div class="news-grid">
     <div class="news-main" style="border-left:3px solid var(--red);">
-      <span class="news-tag tag-lesion">🤯 SEMANA 11</span>
-      <h2 class="news-headline">Le dieron el resumen a Dunkeros y... mejor no lo hubieran dado</h2>
+      <span class="news-tag tag-lesion">🤯 SEMANA 12</span>
+      <h2 class="news-headline">Dunkeros: el pizzero tracalero que quería pitchers gratis, recibió sus putazos con propina incluida y terminó repartiendo invitaciones a coñazos como si fueran volantes de su pizzería</h2>
       <p class="news-body">
-        Cada semana alguien se encarga del resumen de la liga. Esta semana le tocó a <strong style="color:var(--red)">Juan Urdaneta — Dunkeros</strong>. Y el grupo entero se arrepintió.
+        La semana pasada le dimos el WTF Moment a Dunkeros por su resumen. Esta semana se lo lleva de nuevo. Ya es un clásico de la liga — y empieza a preocupar.
         <br><br>
-        Lo que entregó fue catalogado por múltiples fuentes del WhatsApp como <em>"una completa mierda"</em>, <em>"peor que no haber enviado nada"</em> y <em>"un insulto a la inteligencia colectiva del grupo."</em> Se rumorea que varios managers consideraron abandonar la liga después de leerlo.
+        Todo comenzó con <strong style="color:var(--red)">Pirela</strong>. Dunkeros, desesperado porque iba perdiendo contra <strong>Call of Mafia</strong> — el equipo con el peor récord de la liga — salió a buscar pitchers a precio de saldo. Quería que le dieran a Gore, con avg de drop, a cambio de un pitcher por encima de 90. Pirela, con una paciencia que Dunkeros no merecía, le explicó calmadamente que en un trade de ayuda no se puede salir perdiendo en average. La respuesta de Dunkeros fue llamarlo <strong>tracalero</strong> y <strong>carero</strong>. Pirela perdió la calma y lo mandó a mamar — a él, a todos sus empleados y a cada pizza que haya salido de su propia pizzería.
         <br><br>
-        <strong style="color:var(--red);">Dunkeros, con todo el respeto del mundo:</strong> quédate en tu lane. El resumen no es lo tuyo. Y ahora toda la liga lo sabe.
+        Pero lo mejor vino con <strong style="color:var(--red)">Samuel</strong>. Le ofreció un Soroka + Lowder + $6 por Rasmussen + Gore. Dunkeros lo rechazó y armó su show buscando apoyo en el grupo de WhatsApp, llamó tracalero a Samuel, y exigió mejor oferta por su estrella. Nadie lo apoyó. Ni uno solo. El silencio del grupo fue la respuesta más contundente. Samuel, tomando represalias, decidió eliminarlo de <strong>otro grupo de WhatsApp</strong> a ver si así se calmaba.
         <br><br>
-        <span style="font-size:12px;color:#555;font-style:italic;">*La redacción de La Columna Semanal de Pirelowski no se hace responsable por el daño cerebral causado por dicho resumen.*</span>
+        No funcionó. La situación escaló a un nivel que nadie en la liga había visto antes. Dunkeros, con la sangre claramente caliente, le escribió directamente a Samuel: <strong style="color:var(--red)">"Me cargáis arrechera desde temprano. Vos me decís y voy a Nashville y lo arreglamos."</strong> Una invitación formal, sin metáforas ni medias tintas, a resolver un trade de fantasy béisbol a coñazos en la ciudad de Nashville. Samuel respondió con una carcajada. El grupo respondió con más putazos.
+        <br><br>
+        Y como si la tensión no fuera suficiente, Dunkeros todavía tenía energía guardada para una tercera ronda. Esta vez con <strong>Elquin</strong>, quien se atrevió a criticar su resumen semanal. Fiel a su nueva filosofía de vida, la respuesta de Dunkeros fue ofrecerle resolverlo en persona — con coñazos también.
+        <br><br>
+        <strong style="color:var(--red);">Resumen de la semana de Dunkeros: 0 trades cerrados, 1 expulsión de otro grupo, 2 invitaciones a coñazos y un pizzero cada vez más cerca de convertirse en promotor de boxeo amateur.</strong>
+        <br><br>
+        <span style="font-size:12px;color:#555;font-style:italic;">*La Columna Semanal de Pirelowski no se hace responsable por torneos de MMA derivados de trades rechazados en fantasy béisbol.* 🥊</span>
       </p>
     </div>
     <div class="news-sidebar">
       <div class="news-small" style="background:var(--dark3);border:1px solid #222;">
-        <span class="news-tag tag-lesion">📋 El veredicto del grupo</span>
-        <div class="news-small-headline">Calificación colectiva del resumen de Dunkeros</div>
+        <span class="news-tag tag-lesion">📋 El balance de Dunkeros</span>
+        <div class="news-small-headline">Resultado de la guerra comercial de la semana</div>
         <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
           <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:12px;color:#666;">Contenido</span>
-            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">1.2 / 10</span>
+            <span style="font-size:12px;color:#666;">Trades cerrados</span>
+            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">0</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:12px;color:#666;">Esfuerzo</span>
-            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">0.5 / 10</span>
+            <span style="font-size:12px;color:#666;">Grupos de los que lo expulsaron</span>
+            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">1</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:12px;color:#666;">¿Lo releerías?</span>
-            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">JAMÁS</span>
+            <span style="font-size:12px;color:#666;">Invitaciones a coñazos</span>
+            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">2</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="font-size:12px;color:#666;">Veredicto</span>
-            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">💀 REPROBADO</span>
+            <span style="font-family:'Share Tech Mono',monospace;color:var(--red);font-size:13px;">🥊 PROMOTOR DE BOXEO</span>
           </div>
         </div>
       </div>
@@ -1442,71 +1481,70 @@
 
 <!-- TOP 3 AL TÍTULO -->
 <div class="rankings-section" id="top3">
-  <p class="section-label">🏆 Top 3 — Favoritos al Título · Semana 11</p>
-  <table class="rankings-table">
+  <p class="section-label">🏆 Top 3 — Favoritos al Título · Semana 12</p>
+  <div class="rankings-table-wrap"><table class="rankings-table">
     <tbody>
       <tr>
         <td><span class="rank-num top3">01</span></td>
         <td><span class="rank-move move-same">—</span></td>
         <td>
-          <div class="rank-manager">Road to the Tit... — Elking Mo</div>
-          <div class="rank-comment">"8-2 y líder de la Liga Nacional. El único que puede perder el título es él mismo. Ya huele a campeón."</div>
+          <div class="rank-manager">Road to the Tit... — Elquin Mo</div>
+          <div class="rank-comment">"Perdió esta semana contra Los pichones, pero sigue siendo el líder de la Liga Nacional. Una derrota no tumba un trono construido con 8-2. Sigue siendo el equipo a vencer."</div>
         </td>
-        <td><span class="rank-record">8-2-0</span></td>
+        <td><span class="rank-record">8-3-0</span></td>
         <td><span class="rank-pts">88% playoff</span></td>
       </tr>
       <tr>
         <td><span class="rank-num top3">02</span></td>
-        <td><span class="rank-move move-same">—</span></td>
+        <td><span class="rank-move move-up">↑1</span></td>
         <td>
-          <div class="rank-manager">Hermagoras — H. Homez</div>
-          <div class="rank-comment">"Apenas manda una que otra nota de voz al grupo y ahí para todo. No tradea — y cuando lo intenta, quiere robar de una manera tan descarada que hace quedar bien a Perdomo. Sus rivales esas semanas parecen equipos de Triple-A. ¿Talento? ¿Suerte? Nadie lo sabe. Pero W4 seguidas con ese método solo tiene una explicación: la leche le está subiendo a niveles históricos."</div>
+          <div class="rank-manager">Chandu — M. Gutiérrez</div>
+          <div class="rank-comment">"2117 puntos esta semana — el más alto de toda la liga. El callado que nadie ve venir sigue subiendo en silencio mientras los demás se gritan en el WhatsApp. W3 y con la mira puesta en el #1."</div>
         </td>
-        <td><span class="rank-record">7-3-0</span></td>
+        <td><span class="rank-record">8-3-0</span></td>
         <td><span class="rank-pts">83% playoff</span></td>
       </tr>
       <tr>
         <td><span class="rank-num top3">03</span></td>
-        <td><span class="rank-move move-same">—</span></td>
+        <td><span class="rank-move move-down">↓1</span></td>
         <td>
-          <div class="rank-manager">Baby Lions — Jesus Pozo</div>
-          <div class="rank-comment">"El Dictador con cara de no haber roto un plato en su vida. Mientras todos pelean y se gritan en el grupo, él maquina en silencio — buscando la manera de controlar cada jugador del fantasy como si fuera un ajedrez. Sigue siendo el más completo del AL y probablemente ya sabe cómo va a ganar el título. Nosotros todavía no."</div>
+          <div class="rank-manager">Hermagoras — H. Homez</div>
+          <div class="rank-comment">"Se le rompió la racha W4 esta semana contra Locos y Hambrientos. La leche que tenía subiendo a niveles históricos finalmente encontró su límite. Sigue en el Top 3, pero el aura de invencible ya se fue."</div>
         </td>
-        <td><span class="rank-record">7-3-0</span></td>
-        <td><span class="rank-pts">70% playoff</span></td>
+        <td><span class="rank-record">7-4-0</span></td>
+        <td><span class="rank-pts">75% playoff</span></td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
   <p style="font-size:11px;color:#333;font-family:'Share Tech Mono',monospace;padding:12px 0;letter-spacing:1px;font-style:italic;">* Este ranking es sujeto a cambio cada semana según récord, momentum y análisis interno de la liga. Lo que hoy es Top 3, mañana puede no serlo.</p>
 </div>
 
 <!-- MVP DE LA SEMANA -->
 <div class="news-section" id="mvp">
-  <p class="section-label">⭐ MVP de la Semana · Semana 11
+  <p class="section-label">⭐ MVP de la Semana · Semana 12
     <span style="font-size:10px;color:#444;letter-spacing:1px;font-style:italic;text-transform:none;margin-left:10px;">Varía cada semana. Depende de ti ganártelo.</span>
   </p>
   <div class="news-grid">
-    <div class="news-main" style="border-left:3px solid var(--red);">
-      <span class="news-tag tag-lesion">🚫 SEMANA 11</span>
-      <h2 class="news-headline">No hay MVP esta semana. Ninguno se lo merece.</h2>
+    <div class="news-main" style="border-left:3px solid gold;">
+      <span class="news-tag" style="background:rgba(255,215,0,0.1);color:gold;">⭐ MVP SEMANA 12</span>
+      <h2 class="news-headline">El Gordo Angel — el rey de remontadas imposibles que sigue invicto contra Erick</h2>
       <p class="news-body">
-        Seamos honestos. La gran mayoría de los matchups de esta semana fueron una <strong style="color:var(--red)">soberana mierda</strong>. Partidos sin emoción, decisiones cuestionables y resultados que dan vergüenza ajena. No hubo un manager que se destacara lo suficiente como para llevarse el título.
+        El domingo le tradearon a Paul Skenes en contra para intentar remontar su matchup. Aun así no le alcanzó. Pero eso no es lo importante — lo importante es lo que viene haciendo toda la temporada: El Gordo sigue completamente invicto contra Erick en este Fantasy. Un trabajo impecable contra uno de sus rivales más fuertes de toda la liga.
         <br><br>
-        Esta redacción se niega a premiar la mediocridad. El MVP existe para reconocer excelencia — y esta semana, la excelencia brilló por su ausencia.
+        Mientras otros managers se gritan en el WhatsApp, El Gordo simplemente sigue ganando los partidos que importan. No hace falta hacer ruido cuando los números hablan solos.
         <br><br>
-        <strong style="color:#555;font-style:italic;">Sin embargo... hay dos menciones honoríficas que sí se ganaron su reconocimiento.</strong>
+        <strong style="color:gold;">El MVP de esta semana no es el que más puntos hizo — es el que sigue construyendo una historia perfecta contra su rival más duro.</strong>
       </p>
     </div>
     <div class="news-sidebar">
-      <div class="news-small" style="background:var(--dark3);border-left:2px solid #FBBF24;">
-        <span class="news-tag" style="background:rgba(251,191,36,0.1);color:#FBBF24;">🏅 Mención Honorífica #1</span>
-        <div class="news-small-headline" style="margin-top:8px;">Team Boli — Nelson Lozano</div>
-        <div class="news-small-body" style="margin-top:6px;">A última hora, cuando nadie lo esperaba, Boli movió su equipo, hizo el trade correcto y aseguró una victoria importante. No fue bonito, no fue elegante — pero fue efectivo. Eso cuenta. Mención honorífica bien merecida. 👏</div>
-      </div>
-      <div class="news-small" style="background:var(--dark3);border-left:2px solid #FBBF24;margin-top:2px;">
-        <span class="news-tag" style="background:rgba(251,191,36,0.1);color:#FBBF24;">🏅 Mención Honorífica #2</span>
-        <div class="news-small-headline" style="margin-top:8px;">Baby Lions — Jesus Pozo</div>
-        <div class="news-small-body" style="margin-top:6px;">La mente maestra sigue operando en silencio. Compra pitchers, los usa, los vende, acecha a sus rivales sin que nadie lo vea venir. Sus rivales creen que van ganando el matchup — y Pozo ya está tres movidas adelante. Peligroso. 🦁</div>
+      <div class="news-small" style="background:var(--dark3);border:1px solid #2a2a00;">
+        <span class="news-tag" style="background:rgba(255,215,0,0.1);color:gold;">🏅 El expediente</span>
+        <div style="margin-top:12px;display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:12px;color:#555;">⚾ Invicto contra Erick en toda la temporada</div>
+          <div style="font-size:12px;color:#555;">💪 Intentó remontar incluso con Skenes en contra</div>
+          <div style="font-size:12px;color:#555;">🎯 El rival más fuerte, dominado sin excepción</div>
+          <div style="font-size:12px;color:#555;font-style:italic;margin-top:4px;">* El Gordo no necesita hacer ruido en el grupo para ganar.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1514,7 +1552,7 @@
 
 <!-- TRASH TALK -->
 <div class="trash-section" id="trashtalk">
-  <p class="section-label">Trash Talk Corner — Semana 11 🔥
+  <p class="section-label">Trash Talk Corner — Semana 12 🔥
     <span style="font-size:10px;color:#444;letter-spacing:1px;font-style:italic;text-transform:none;margin-left:10px;">Se actualiza cada lunes. Los mejores van al Hall of Fame.</span>
   </p>
 
@@ -1537,16 +1575,17 @@
 
 <script>
   const ttData = [
-    { quote: '"No puedo ser m\u00e1s amigo de Chandurrix."', author: '\u2014 El Gordo Angel rompiendo la amistad p\u00fablicamente \ud83d\udc94', color: '#1DB954' },
-    { quote: '"Gracias a Dios se fue Le\u00f3n y volv\u00ed a ver la victoria."', author: '\u2014 Pozo culpando a Le\u00f3n de todas sus derrotas \ud83d\ude07', color: '#F4A300' },
-    { quote: '"Muerte al Gordo."', author: '\u2014 Chandurrix respondi\u00e9ndole al Gordo sin rodeos \u2620\ufe0f', color: '#C084FC' },
-    { quote: '"\u00bfQu\u00e9 dicen? No los escucho desde la cima."', author: '\u2014 Elquin Mo ignorando al grupo desde el #1 \ud83d\udc51', color: '#38BDF8' },
-    { quote: '"Elquin, no le metéis miedo a nadie. \u00a1Plasta e\u2019 mierda!"', author: '\u2014 El Gordo Angel respondi\u00e9ndole a Elquin desde abajo \ud83e\udea3', color: '#1DB954' },
-    { quote: '"\u00bfAlg\u00fan equipo disponible?"', author: '\u2014 Le\u00f3n tirando la toalla y buscando nueva casa \ud83c\udff3\ufe0f', color: '#FB7185' },
-    { quote: '"Est\u00e1 muy bien esto que acabas de hacer Pirela, pero yo creo que tengo una idea mejor... voy a crear un grupo."', author: '\u2014 Pozo amenazando con crear su propio sitio \ud83d\ude24', color: '#F4A300' },
-    { quote: '"Botgagoras cree que porque envi\u00f3 dos notas de voz hablando de estad\u00edsticas le vamos a parar bolas. \u00a1C\u00e1llate la jeta un mes!"', author: '\u2014 El Gordo Angel harto de los an\u00e1lisis de Hermagoras \ud83d\udcca\ud83d\udd07', color: '#1DB954' },
-    { quote: '"\u00bfNo te dieron totona hoy, gordo?"', author: '\u2014 Elquin atacando al Gordo fuera del terreno del fantasy \ud83d\udca0', color: '#38BDF8' },
-    { quote: '"M\u00e9tete tus trades por el culo, maldito gordo."', author: '\u2014 Perdomo rechazando la propuesta del Gordo \ud83d\udce6\ud83d\udeab', color: '#F87171' },
+    { quote: '"Tendremos un cierre legendario #_#"', author: '\u2014 Erick so\u00f1ando con un final \u00e9pico que nadie m\u00e1s ve venir \ud83d\ude44', color: '#FB7185' },
+    { quote: '"Ese cierre legendario te lo invent\u00e1s vos nada m\u00e1s, porque no cerr\u00e1s el culo mejor."', author: '\u2014 El Gordo Angel respondi\u00e9ndole a Erick sin anestesia \ud83d\udd25', color: '#1DB954' },
+    { quote: '"\u00bfArreglamos nuestras diferencias a golpes?"', author: '\u2014 Dunkeros invitando a Samuel a un evento deportivo no oficial \ud83e\udd4a', color: '#A78BFA' },
+    { quote: '"Me ten\u00e9s arrechera desde esta ma\u00f1ana, \u00bfno?"', author: '\u2014 Dunkeros calentito antes del mediod\u00eda \ud83d\udd25', color: '#A78BFA' },
+    { quote: '"Dar\u00e9 mi vida porque pierda Emir todos los d\u00edas."', author: '\u2014 Dunkeros declarando enemistad eterna con Emir \ud83d\udc80', color: '#A78BFA' },
+    { quote: '"\u00bfHay que pagar alguna caimana?"', author: '\u2014 N\u00e9stor dispuesto a financiar lo que sea necesario \ud83d\udcb0', color: '#FBBF24' },
+    { quote: '"\u00bfSab\u00e9s qu\u00e9 gordo? Mejor dejalo as\u00ed y yo pago esa maldita mierda."', author: '\u2014 El Inge (E. Rosas) cerrando el tema con billetera en mano \ud83d\udcb8', color: '#60A5FA' },
+    { quote: '"A ver si vamos sancionando al malo de Chandurrix, dos vetos en dos semanas."', author: '\u2014 El Gordo Angel pidiendo justicia contra Chandurrix \u2696\ufe0f', color: '#1DB954' },
+    { quote: '"\u00bfCu\u00e1ndo vas a manejar un equipo vos mismo?"', author: '\u2014 El Gordo Angel tir\u00e1ndole a Chandurrix donde m\u00e1s duele \ud83c\udfaf', color: '#1DB954' },
+    { quote: '"Nojoda y el Gordo cansa, parece de esos juguetes que apret\u00e1s y dicen lo mismo."', author: '\u2014 Dunkeros contraatacando al Gordo \ud83e\uddf8', color: '#A78BFA' },
+    { quote: '"Alguien con $18 a estas alturas del fantasy y con r\u00e9cord negativo no puede andar hablando de los dem\u00e1s."', author: '\u2014 Chandurrix cerr\u00e1ndole la boca al Gordo con estad\u00edsticas \ud83d\udcca', color: '#C084FC' },
   ];
 
   let ttCurrent = 0;
@@ -1602,8 +1641,8 @@
     <!-- La Frase de Pirelowski -->
     <div style="margin-top:40px;text-align:center;padding-bottom:40px;">
       <p style="font-family:'Anton',sans-serif;font-size:11px;color:#333;letter-spacing:3px;text-transform:uppercase;">— Frase Semanal de Pirelowski —</p>
-      <p style="font-family:'Anton',sans-serif;font-size:clamp(26px,5vw,40px);color:var(--cream);letter-spacing:1px;margin-top:12px;line-height:1.3;">"Pensar no cuesta.<br><span style="color:var(--green);">Pero en este grupo,<br>pocos lo practican."</span></p>
-      <p style="margin-top:16px;">— <span style="font-family:'Anton',sans-serif;font-size:18px;color:#666;letter-spacing:3px;">PIRELOWSKI</span> &nbsp;·&nbsp; <span style="font-family:'Share Tech Mono',monospace;color:#555;font-size:11px;">Miércoles 10 de junio, 2026</span></p>
+      <p style="font-family:'Anton',sans-serif;font-size:clamp(26px,5vw,40px);color:var(--cream);letter-spacing:1px;margin-top:12px;line-height:1.3;">"Un trade rechazado<br><span style="color:var(--green);">se discute con palabras.<br>Nunca con un viaje a Nashville."</span></p>
+      <p style="margin-top:16px;">— <span style="font-family:'Anton',sans-serif;font-size:18px;color:#666;letter-spacing:3px;">PIRELOWSKI</span> &nbsp;·&nbsp; <span style="font-family:'Share Tech Mono',monospace;color:#555;font-size:11px;">Lunes 15 de junio, 2026</span></p>
     </div>
   </div>
 </div>
